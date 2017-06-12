@@ -1,0 +1,30 @@
+name: bdes_to
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.5*
+  - click
+  - fiona
+  - flake8
+  - flask
+  - geos
+  - gdal
+  - joblib
+  - libgdal
+  - netcdf4
+  - numpy
+  - pandas
+  - rasterio
+  - scipy
+  - snakemake
+  - yaml
+  - pip:
+      - colorlog
+      - easywebdav
+      - geopandas
+      - python-dotenv
+      - rasterstats
+      - tabulate
