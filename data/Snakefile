@@ -1,0 +1,147 @@
+import dotenv
+import logging
+
+from snakemake.remote.HTTP import RemoteProvider as HTTPRemoteProvider
+from importlib.machinery import SourceFileLoader
+
+utils = SourceFileLoader("src.utils", "../src/00_lib/utils.py").load_module()
+
+## GLOBALS ---------------------------------------------------------------------
+
+# dotenv project variables
+dotenv_path = "../.env"
+dotenv.load_dotenv(dotenv_path)
+
+# Set up a remote provider
+HTTP = HTTPRemoteProvider()
+
+# Load the content of the data manifest file into a DataManager object.
+dm = utils.DataManager("data_manifest.yml")
+
+# Get rid of "https://" in urls (Snakemake doesn't allow it) and construct
+# destination paths on the local file system
+DATADRYAD_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="datadryad", full_path=True)]
+DATADRYAD_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in DATADRYAD_SRC_DATASETS]
+
+PROVIDE_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="provide", full_path=True)]
+PROVIDE_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in PROVIDE_SRC_DATASETS]
+
+EEA_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eea", full_path=True)]
+EEA_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EEA_SRC_DATASETS]
+
+EUROSTAT_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eurostat", full_path=True)]
+EUROSTAT_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EUROSTAT_SRC_DATASETS]
+
+# UDR collection "european_tetrapods" has Liechtenstein, which needs to be cut
+# out. So place everything in external
+UDR_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="udr", full_path=True)]
+UDR_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in UDR_SRC_DATASETS]
+
+ALL_DST_DATASET = DATADRYAD_DST_DATASETS + PROVIDE_DST_DATASETS + \
+                  EEA_DST_DATASETS + EUROSTAT_DST_DATASETS + UDR_DST_DATASETS
+
+## Get data --------------------------------------------------------------------
+
+rule all:
+    input: ALL_DST_DATASET
+
+rule get_datadryad_data:
+    input:
+        HTTP.remote(DATADRYAD_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        DATADRYAD_DST_DATASETS
+    log:
+        "../logs/data_datadryad.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
+
+rule get_eea_data:
+    input:
+        HTTP.remote(EEA_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        EEA_DST_DATASETS
+    log:
+        "../logs/data_eea.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
+
+
+rule get_eurostat_data:
+    input:
+        HTTP.remote(EUROSTAT_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        EUROSTAT_DST_DATASETS
+    log:
+        "../logs/data_eurostat.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
+
+rule get_provide_data:
+    input:
+        HTTP.remote(PROVIDE_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        PROVIDE_DST_DATASETS
+    log:
+        "../logs/data_provide.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
+
+rule get_udr_data:
+    input:
+        HTTP.remote(UDR_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        UDR_DST_DATASETS
+    log:
+        "../logs/data_udr.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
