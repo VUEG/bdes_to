@@ -4,14 +4,17 @@ channels:
   - bioconda
   - conda-forge
   - anaconda
+  - SciTools
 dependencies:
   - python=3.5*
   - click
   - fiona
   - flake8
   - flask
-  - geos
-  - gdal
+  - geos=3.4.2
+  # NOTE: using gdal>=2.1.0 will break things as gdalwarp does not accept
+  # cultine with invalid geometry (such as NUTS data)
+  - gdal=2.0.2
   - joblib
   - libgdal
   - netcdf4
