@@ -330,8 +330,8 @@ rule harmonize_data:
         clip_shp=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
     output:
         # NOTE: UDR_SRC_DATASETS do not need to processed
-        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EEA_SRC_DATASETS]),
-        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EEA_SRC_DATASETS]
+        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EG_SRC_DATASETS]),
+        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EG_SRC_DATASETS]
     log:
         "logs/harmonize_data.log"
     message:
@@ -380,20 +380,6 @@ rule harmonize_data:
                 llogger.debug("{0} Renaming dataset {1} to {2}".format(prefix, rescaled_raster, harmonized_raster))
                 os.rename(rescaled_raster, harmonized_raster)
                 harmonized_raster = rescaled_raster
-
-            # Finally, smooth dataset if needed
-            org_raster = os.path.basename(harmonized_raster)
-            if org_raster in SMOOTHED_DATASETS.keys():
-                smoothed_raster = harmonized_raster.replace(org_raster,
-                                                            SMOOTHED_DATASETS[org_raster])
-                llogger.info("{0} Smoothing dataset {1}".format(prefix, harmonized_raster))
-                llogger.debug("{0} Target dataset {1}".format(prefix, smoothed_raster))
-                spatutils.smooth_raster(harmonized_raster, smoothed_raster,
-                                        log_transform=True, method="medfilt",
-                                        verbose=False)
-                os.remove(harmonized_raster)
-                llogger.debug("{0} Renaming dataset {1} to {2}".format(prefix, smoothed_raster, harmonized_raster))
-                os.rename(smoothed_raster, harmonized_raster)
 
 
 ## Set up, run and post-process analyses --------------------------------------
