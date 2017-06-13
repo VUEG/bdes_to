@@ -1,0 +1,6 @@
+2017-06-13 11:13:27 [pprocess_nuts2] [DEBUG] Reprojected NUTS level 2 data from EPSG:4258 to EPSG:3035
+2017-06-13 11:13:27 [pprocess_nuts2] [DEBUG] ogr2ogr data/interim/reprojected/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.shp -t_srs "EPSG:3035" data/external/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.shp
+2017-06-13 11:13:30 [pprocess_nuts2] [DEBUG] Clipped NUTS level 2 data to analysis bounds: 2100000.0 1100000.0 6526000.0 5410000.0
+2017-06-13 11:13:30 [pprocess_nuts2] [DEBUG] Selected only a subset of eurostat countries:
+2017-06-13 11:13:30 [pprocess_nuts2] [DEBUG]  AT, BE, BG, CZ, DE, DK, ES, EL, EE, FR, FI, IT, HU, IE, NL, LU, LT, LV, PL, SE, RO, PT, SK, SI, UK
+2017-06-13 11:13:30 [pprocess_nuts2] [DEBUG] Resulting file: data/processed/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.shp
