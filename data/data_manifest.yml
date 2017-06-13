@@ -8,6 +8,14 @@
             - README.txt
           resources:
             - woodprod_average.tif
+  - provider: eg
+    collections:
+      - air_quality:
+          category: ecosystemservices
+          metadata:
+            - README.md
+          resources:
+            - air_quality.tif
   - provider: provide
     collections:
       - carbon_sequestration:

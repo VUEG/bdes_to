@@ -29,6 +29,9 @@ PROVIDE_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "
 EEA_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eea", full_path=True)]
 EEA_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EEA_SRC_DATASETS]
 
+EG_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eg", full_path=True)]
+EG_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EG_SRC_DATASETS]
+
 EUROSTAT_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eurostat", full_path=True)]
 EUROSTAT_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EUROSTAT_SRC_DATASETS]
 
@@ -38,7 +41,7 @@ UDR_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(prov
 UDR_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in UDR_SRC_DATASETS]
 
 ALL_DST_DATASET = DATADRYAD_DST_DATASETS + PROVIDE_DST_DATASETS + \
-                  EEA_DST_DATASETS + EUROSTAT_DST_DATASETS + UDR_DST_DATASETS
+                  EEA_DST_DATASETS + EG_DST_DATASETS + EUROSTAT_DST_DATASETS + UDR_DST_DATASETS
 
 ## Get data --------------------------------------------------------------------
 
@@ -75,6 +78,27 @@ rule get_eea_data:
         EEA_DST_DATASETS
     log:
         "../logs/data_eea.log"
+    run:
+        # Configure logger
+        fileHandler = logging.FileHandler(log[0])
+        fileHandler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
+        logger.logger.addHandler(fileHandler)
+
+        for i in range(0, len(input)):
+            shell("mv {0} {1}".format(input[i], output[i]))
+            logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
+
+
+rule get_eg_data:
+    input:
+        HTTP.remote(EG_SRC_DATASETS,
+                    username=os.environ.get("BEEHUB_USERNAME"),
+                    password=os.environ.get("BEEHUB_PASSWORD"),
+                    keep_local=False)
+    output:
+        EG_DST_DATASETS
+    log:
+        "../logs/data_eg.log"
     run:
         # Configure logger
         fileHandler = logging.FileHandler(log[0])
