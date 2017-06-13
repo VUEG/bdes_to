@@ -1,0 +1,2 @@
+2017-06-13 11:13:32 [rasterize_nuts2] [DEBUG] gdal_rasterize -l NUTS_RG_01M_2013_level2 -a ID -tr 1000 1000 -te 2000000.0 1000000.0 6526000.0 5410000.0 -ot Int16 -a_nodata -32768 -co COMPRESS=DEFLATE data/processed/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.shp data/processed/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.tif
+2017-06-13 11:13:33 [rasterize_nuts2] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
