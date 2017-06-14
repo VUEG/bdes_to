@@ -8,13 +8,47 @@ __Version:__ 0.1.0
 
 ### Installation
 
-The project relies both on Python and R scripts to pre- and post-procesing the data as well as running some of the analyses.
+The project relies both on Python and R scripts to pre- and post-procesing the data as well as running some of the analyses. While the project might run on Windows machines, it has never been tested on one. Your safest bet is running everything on a Linux machine.
 
-#### 1. Installing necessary Python dependencies
+#### 1. Getting this project
 
-#### 2. Installing necessary R dependencies
+You need to first have `git` installed on the system you want to run this project on. Install `git` by:
 
-#### 3. Installing Zonation
+```
+# Debian/Ubuntu
+sudo apt-get install git
+
+# Fedora/Redhat
+sudo yum install git
+
+# openSUSE
+sudo zypper install git
+```
+
+Next, get everything in this project using git:
+
+```
+git clone https://github.com/VUEG/bdes_to.git
+```
+
+#### 2. Installing necessary dependencies using conda
+
+This project uses [conda](https://conda.io/docs/) package, dependency and environment management system for setting everything up. It comes with simple installer script `bootsrap_conda.sh` that will install the right version of `conda` command line program for you. To run it, type:
+
+```
+# Get into the project directory
+cd bdes_to
+# Install conda
+./bootsrap_conda.sh
+```
+
+After installation is finished and assuming everythign went well, you create a new enviroment with all the necessary (Python and R) pacakages installed by doing the following:
+
+```
+
+```
+
+#### 2. Installing Zonation
 
 #### 4. Running the processing and analysis workflow
 
