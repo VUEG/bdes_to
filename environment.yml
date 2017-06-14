@@ -5,6 +5,7 @@ channels:
   - conda-forge
   - anaconda
   - SciTools
+  - r
 dependencies:
   - python=3.5*
   - click
@@ -21,6 +22,7 @@ dependencies:
   - numpy
   - pandas
   - rasterio
+  - r-essentials
   - scipy
   - snakemake
   - yaml
