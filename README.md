@@ -6,7 +6,17 @@ __Version:__ 0.1.0
 
 ### Introduction
 
+### Installation
 
+The project relies both on Python and R scripts to pre- and post-procesing the data as well as running some of the analyses.
+
+#### 1. Installing necessary Python dependencies
+
+#### 2. Installing necessary R dependencies
+
+#### 3. Installing Zonation
+
+#### 4. Running the processing and analysis workflow
 
 ### Project organization
 
