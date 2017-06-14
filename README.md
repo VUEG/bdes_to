@@ -1,8 +1,8 @@
-[![Snakemake](https://img.shields.io/badge/snakemake-≥3.5.2-brightgreen.svg?style=flat-square)](http://snakemake.bitbucket.org)
+[![Snakemake](https://img.shields.io/badge/snakemake-≥3.13.0-brightgreen.svg?style=flat-square)](http://snakemake.bitbucket.org)
 
-## Comparing spatial prioritization methods for biodiversity conservation and ecosystem service supply in Europe
+## Trade-offs between biodiversity and ecosystem services in Europe
 
-__Version:__ 0.3.0  
+__Version:__ 0.1.0  
 
 ### Introduction
 
