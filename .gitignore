@@ -71,6 +71,7 @@ target/
 .snakemake
 
 # R
+*.Rproj
 .Rproj.user
 .Rhistory
 rsconnect/
@@ -88,3 +89,4 @@ reports/manuscript/~$*.docx
 *.html
 
 tmp/
+
