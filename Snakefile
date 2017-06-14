@@ -52,7 +52,7 @@ DATADRYAD_SRC_DATASETS = [url.replace(beehub_url, external_data) for url in dm.g
 
 EEA_SRC_DATASETS = [url.replace(beehub_url, external_data) for url in dm.get_resources(provider="eea", full_path=True)]
 
-EG_SRC_DATASETS = [url.replace(beehub_url, external_data) for url in dm.get_resources(provider="eg", full_path=True)]
+JRC_SRC_DATASETS = [url.replace(beehub_url, external_data) for url in dm.get_resources(provider="jrc", full_path=True)]
 
 # Get specific NUTS collections from Eurostat
 NUTS_LEVEL0_DATA = [url.replace(beehub_url, external_data) for url in dm.get_resources(collection="nuts_level0", full_path=True)]
@@ -68,7 +68,7 @@ UDR_SRC_DATASETS = [url.replace(beehub_url, external_data) for url in dm.get_res
 BD_DST_DATASETS = [url.replace(beehub_url, feature_data) for url in dm.get_resources(category="biodiversity", full_path=True)]
 ES_DST_DATASETS = [url.replace(beehub_url, feature_data) for url in dm.get_resources(category="ecosystemservices", full_path=True)]
 
-ALL_SRC_DATASETS = DATADRYAD_SRC_DATASETS + PROVIDE_SRC_DATASETS + UDR_SRC_DATASETS
+ALL_SRC_DATASETS = DATADRYAD_SRC_DATASETS + PROVIDE_SRC_DATASETS + JRC_SRC_DATASETS + UDR_SRC_DATASETS
 
 # Let's build weight vectors needed for the weighted analysis variants
 
@@ -325,13 +325,13 @@ rule clip_udr_data:
 
 rule harmonize_data:
     input:
-        external=DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EG_SRC_DATASETS,
+        external=DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS,
         like_raster=[path for path in DATADRYAD_SRC_DATASETS if "woodprod_average" in path][0],
         clip_shp=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
     output:
         # NOTE: UDR_SRC_DATASETS do not need to processed
-        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EG_SRC_DATASETS]),
-        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+EG_SRC_DATASETS]
+        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS]),
+        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS]
     log:
         "logs/harmonize_data.log"
     message:
