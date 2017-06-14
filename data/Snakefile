@@ -29,11 +29,11 @@ PROVIDE_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "
 EEA_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eea", full_path=True)]
 EEA_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EEA_SRC_DATASETS]
 
-EG_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eg", full_path=True)]
-EG_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EG_SRC_DATASETS]
-
 EUROSTAT_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="eurostat", full_path=True)]
 EUROSTAT_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in EUROSTAT_SRC_DATASETS]
+
+JRC_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(provider="jrc", full_path=True)]
+JRC_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in JRC_SRC_DATASETS]
 
 # UDR collection "european_tetrapods" has Liechtenstein, which needs to be cut
 # out. So place everything in external
@@ -41,7 +41,7 @@ UDR_SRC_DATASETS = [url.replace("https://", "") for url in dm.get_resources(prov
 UDR_DST_DATASETS = [url.replace("beehub.nl/environmental-geography-group", "external") for url in UDR_SRC_DATASETS]
 
 ALL_DST_DATASET = DATADRYAD_DST_DATASETS + PROVIDE_DST_DATASETS + \
-                  EEA_DST_DATASETS + EG_DST_DATASETS + EUROSTAT_DST_DATASETS + UDR_DST_DATASETS
+                  EEA_DST_DATASETS + EUROSTAT_DST_DATASETS + JRC_DST_DATASETS + UDR_DST_DATASETS
 
 ## Get data --------------------------------------------------------------------
 
@@ -89,16 +89,16 @@ rule get_eea_data:
             logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
 
 
-rule get_eg_data:
+rule get_eurostat_data:
     input:
-        HTTP.remote(EG_SRC_DATASETS,
+        HTTP.remote(EUROSTAT_SRC_DATASETS,
                     username=os.environ.get("BEEHUB_USERNAME"),
                     password=os.environ.get("BEEHUB_PASSWORD"),
                     keep_local=False)
     output:
-        EG_DST_DATASETS
+        EUROSTAT_DST_DATASETS
     log:
-        "../logs/data_eg.log"
+        "../logs/data_eurostat.log"
     run:
         # Configure logger
         fileHandler = logging.FileHandler(log[0])
@@ -110,16 +110,16 @@ rule get_eg_data:
             logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
 
 
-rule get_eurostat_data:
+rule get_jrc_data:
     input:
-        HTTP.remote(EUROSTAT_SRC_DATASETS,
+        HTTP.remote(JRC_SRC_DATASETS,
                     username=os.environ.get("BEEHUB_USERNAME"),
                     password=os.environ.get("BEEHUB_PASSWORD"),
                     keep_local=False)
     output:
-        EUROSTAT_DST_DATASETS
+        JRC_DST_DATASETS
     log:
-        "../logs/data_eurostat.log"
+        "../logs/data_jrc.log"
     run:
         # Configure logger
         fileHandler = logging.FileHandler(log[0])

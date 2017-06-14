@@ -8,7 +8,7 @@
             - README.txt
           resources:
             - woodprod_average.tif
-  - provider: eg
+  - provider: jrc
     collections:
       - air_quality:
           category: ecosystemservices
