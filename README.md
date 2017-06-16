@@ -44,11 +44,11 @@ conda env create -n bdes_to
 
 This command will create a new virtual environment called `bdes_to` and install all the dependencies listed in `environment.yml` in it. 
 
-#### 2. Installing Zonation
+#### 3. Installing Zonation
 
 [Zonation](https://github.com/cbig/zonation-core) is not yet available through conda, so you will have to install it separately and system-wide. Follow the installation instructions found [here](https://github.com/cbig/zig4-compilation-scripts). 
 
-#### 3. Running the processing and analysis workflow
+### Running the processing and analysis workflow
 
 This project uses [snakemake](https://snakemake.readthedocs.io/en/stable/) workflow management system to run the different stages in sequence. It has already been installed in step 1. You can list all the individual snakemake rules (i.e. stages) by typing in:
 
