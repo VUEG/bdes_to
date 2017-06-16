@@ -8,21 +8,14 @@ __Version:__ 0.1.0
 
 ### Installation
 
-The project relies both on Python and R scripts to pre- and post-procesing the data as well as running some of the analyses. While the project might run on Windows machines, it has never been tested on one. Your safest bet is running everything on a Linux machine.
+The project relies both on Python and R scripts to pre- and post-procesing the data as well as running some of the analyses. While the project might run on Windows machines, it has never been tested on one. Your safest bet is running everything on a Ubuntu 14.04 (Trusty) machine. Everything else should run on other Linux distributions as well, but Zonation currently works nicely only Ubuntu 14.04 (though it is possible to compile it on 16.04 as well).
 
 #### 1. Getting this project
 
 You need to first have `git` installed on the system you want to run this project on. Install `git` by:
 
 ```
-# Debian/Ubuntu
 sudo apt-get install git
-
-# Fedora/Redhat
-sudo yum install git
-
-# openSUSE
-sudo zypper install git
 ```
 
 Next, get everything in this project using git:
@@ -38,6 +31,7 @@ This project uses [conda](https://conda.io/docs/) package, dependency and enviro
 ```
 # Get into the project directory
 cd bdes_to
+
 # Install conda
 ./bootsrap_conda.sh
 ```
@@ -52,7 +46,9 @@ This command will create a new virtual environment called `bdes_to` and install 
 
 #### 2. Installing Zonation
 
-#### 4. Running the processing and analysis workflow
+[Zonation](https://github.com/cbig/zonation-core) is not yet available through conda, so you will have to install it separately and system-wide. Follow the installation instructions found [here](https://github.com/cbig/zig4-compilation-scripts). 
+
+#### 3. Running the processing and analysis workflow
 
 ### Project organization
 
