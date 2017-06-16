@@ -42,11 +42,13 @@ cd bdes_to
 ./bootsrap_conda.sh
 ```
 
-After installation is finished and assuming everythign went well, you create a new enviroment with all the necessary (Python and R) pacakages installed by doing the following:
+After installation is finished and assuming everythign went well, you create a new enviroment with all the necessary (Python and R) pacakages installed by doing the following (still in the same directory):
 
 ```
-
+conda env create -n bdes_to
 ```
+
+This command will create a new virtual environment called `bdes_to` and install all the dependencies listed in `environment.yml` in it. 
 
 #### 2. Installing Zonation
 
