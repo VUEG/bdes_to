@@ -50,6 +50,18 @@ This command will create a new virtual environment called `bdes_to` and install 
 
 #### 3. Running the processing and analysis workflow
 
+This project uses [snakemake](https://snakemake.readthedocs.io/en/stable/) workflow management system to run the different stages in sequence. It has already been installed in step 1. You can list all the individual snakemake rules (i.e. stages) by typing in:
+
+```
+snakemake -l
+```
+
+or run the whole sequence (not recommended as this will also run all the Zonation analyses) by:
+
+```
+snakemake
+```
+
 ### Project organization
 
 
