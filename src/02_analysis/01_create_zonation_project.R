@@ -21,7 +21,7 @@ NBIRDS <- 404
 NMAMMALS <- 164
 NREPTILES <- 112
 
-NESFEATURES <- 9
+NESFEATURES <- 10
 NBDFEATURES <- NAMPHIBIANS + NBIRDS + NMAMMALS + NREPTILES
 NALLFEATURES <- NESFEATURES + NBDFEATURES
 
@@ -64,20 +64,16 @@ GROUP_WEIGHTS_BD <- EQUAL_WEIGHTS_BD
 
 # Project variables
 
-VARIANTS <- c("01_caz_all",         "02_abf_all",
-              "03_caz_all_wgt",     "04_abf_all_wgt",
-              "05_caz_all_wgt_cst", "06_abf_all_wgt_cst",
-              "07_caz_es",          "08_abf_es",
-              "09_caz_es_cst",      "10_abf_es_cst",
-              "11_caz_bd",          "12_abf_bd",
-              "13_caz_bd_cst",      "14_abf_bd_cst")
+VARIANTS <- c("01_abf_bio", "02_abf_car", "03_abf_esc",
+              "04_abf_esf", "05_abf_bio_car", "06_abf_bio_esc",
+              "07_abf_bio_esf")
 
 ZSETUP_ROOT <- "zsetup"
 
-PPA_RASTER_FILE <- "data/processed/eurostat/nuts_level2/NUTS_RG_01M_2013_level2.tif"
+PPA_RASTER_FILE <- "data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.tif"
 PPA_CONFIG_FILE <- "ppa_config.txt"
 
-PROJECT_NAME <- "priocomp"
+PROJECT_NAME <- "bdes_to"
 
 # Helper functions --------------------------------------------------------
 
@@ -104,70 +100,6 @@ create_sh_file <- function(x) {
   close(file_con)
   Sys.chmod(sh_file)
   return(invisible(TRUE))
-}
-
-create_load_variant <- function(name, setup_variant, load_raster) {
-  from_name <- setup_variant@name
-  to_name <- name
-  # Copy and rename the setup variant
-  from_dir <- file.path(ZSETUP_ROOT, PROJECT_NAME, from_name)
-  to_dir <- file.path(ZSETUP_ROOT, PROJECT_NAME, to_name)
-  dir.create(to_dir)
-  from_files <- list.files(from_dir, full.names = TRUE,
-                           recursive = TRUE, include.dirs = TRUE)
-  invisible(file.copy(from_files, to_dir, recursive = TRUE))
-  # Rename subcomponents
-  to_files <- list.files(to_dir, full.names = TRUE,
-                         recursive = TRUE, include.dirs = TRUE)
-  for (from_item in to_files) {
-    to_item <- gsub(from_name, to_name, from_item)
-    file.rename(from_item, to_item)
-  }
-  # List renamed files
-  to_files <- list.files(to_dir, full.names = TRUE,
-                         recursive = TRUE, include.dirs = TRUE)
-
-  # Rename the groups file definition in dat file
-  dat_file <- to_files[grepl("\\.dat$", to_files)]
-  dat_content <- readLines(dat_file, -1)
-  grp_file_def <- dat_content[grepl("^groups file", dat_content)]
-  dat_content[grepl("^groups file", dat_content)] <- gsub(from_name, to_name, grp_file_def)
-  writeLines(dat_content, dat_file)
-
-  # Copy and modify the bat-file
-  from_bat_file <- setup_variant@bat.file
-  to_bat_file <- gsub(from_name, to_name, from_bat_file)
-  invisible(file.copy(from_bat_file, to_bat_file))
-  bat_content <- readLines(to_bat_file, -1)
-  bat_content <- gsub(from_name, to_name, bat_content)
-  # Replace new solution call with the loading command
-  bat_content <- gsub("-r", paste0("-l", load_raster), bat_content)
-  writeLines(bat_content, to_bat_file)
-  # Create a sh-file
-  create_sh_file(to_bat_file)
-
-  return(invisible(TRUE))
-}
-
-rearrange_features <- function(variant) {
-  spp_data <- sppdata(variant)
-  new_spp_data <- rbind(spp_data[c(1, 3:nrow(spp_data)),], spp_data[2,])
-  row.names(new_spp_data) <- 1:nrow(new_spp_data)
-  sppdata(variant) <- new_spp_data
-  return(variant)
-}
-
-setup_costs <- function(variant, group) {
-  if (group == "ALL") {
-    sppweights(variant) <- GROUP_WEIGHTS_ALL_COST
-  } else if (group == "ES") {
-    sppweights(variant) <- GROUP_WEIGHTS_ES_COST
-  } else if (group == "BD") {
-    sppweights(variant) <- GROUP_WEIGHTS_BD_COST
-  } else {
-    stop("Unknown group: ", group)
-  }
-  return(variant)
 }
 
 setup_groups <- function(variant, group, weights) {
@@ -222,21 +154,17 @@ setup_ppa <- function(variant) {
   return(variant)
 }
 
-setup_sppdata <- function(variant, group) {
-  variant <- rearrange_features(variant)
-  spp_data <- sppdata(variant)
-  if (group == "ALL") {
-    spp_data <- spp_data
-  } else if (group == "ES") {
-    spp_data <- rbind(spp_data[1:NESFEATURES,],
-                      tail(spp_data, n = NCOSTFEATURES))
-  } else if (group == "BD") {
-    spp_data <- spp_data[(nrow(spp_data) - NBDFEATURES):nrow(spp_data),]
-  } else {
-    stop("Unknown group: ", group)
-  }
-  row.names(spp_data) <- 1:nrow(spp_data)
-  sppdata(variant) <- spp_data
+setup_sppdata <- function(variant, ...) {
+  
+  spp_file <- variant@call.params$spp.file
+  # Delete the existing (dummy) spp-file 
+  file.remove(spp_file)
+  # Create a new spp-file based on the feature dir(s)
+  zonator::create_spp(filename = spp_file, ...)
+  # Read in the spp data and manually create the name column
+  spp_data <- zonator::read_spp(spp_file) 
+  spp_data$name <- gsub(".tif", "", basename(spp_data$filepath))
+  zonator::sppdata(variant) <- spp_data
   return(variant)
 }
 
@@ -253,55 +181,61 @@ save_changes <- function(variant) {
 # Generate variants for all taxa ------------------------------------------
 
 zonator::create_zproject(name = PROJECT_NAME, dir = ZSETUP_ROOT, variants = VARIANTS,
-                         dat_template_file = "analyses/zonation/template.dat",
-                         spp_template_dir = "data/processed/features",
-                         override_path = "../../../data/processed/features",
-                         recursive = TRUE, overwrite = TRUE, debug = TRUE)
+                         dat_template_file = "zsetup/template.dat",
+                         spp_template_file = "zsetup/template.spp",
+                         overwrite = TRUE, debug = TRUE)
 priocomp_zproject <- load_zproject(file.path(ZSETUP_ROOT, PROJECT_NAME))
 
 # Set run configuration parameters --------------------------------------------
 
-## 01_caz ---------------------------------------------------------------------
+override_path <- "../../../data/processed/features"
+
+## 01_abf_bio -----------------------------------------------------------------
 
 variant1 <- get_variant(priocomp_zproject, 1)
-variant1 <- setup_sppdata(variant1, group = "ALL")
-variant1 <- setup_groups(variant1, group = "ALL", weights = FALSE)
+variant1 <- setup_sppdata(variant1, spp_file_dir = "data/processed/features/udr/", 
+                          recursive = TRUE, override_path = override_path)
+variant1 <- setup_groups(variant1, group = "BD", weights = FALSE)
+variant1 <- set_dat_param(variant1, "removal rule", 2)
 variant1 <- setup_ppa(variant1)
 save_changes(variant1)
 
-## 02_abf ---------------------------------------------------------------------
+## 02_abf_car -----------------------------------------------------------------
 
 variant2 <- get_variant(priocomp_zproject, 2)
-variant2 <- setup_sppdata(variant2, group = "ALL")
-variant2 <- setup_groups(variant2, group = "ALL", weights = FALSE)
+variant2 <- setup_sppdata(variant2, spp_file_dir = "data/processed/features/provide/carbon_sequestration/", 
+                          recursive = FALSE, override_path = override_path)
 # Set removal rule
 variant2 <- set_dat_param(variant2, "removal rule", 2)
 variant2 <- setup_ppa(variant2)
 save_changes(variant2)
 
-## 03_caz_wgt ----------------------------------------------------------------
+## 03_abf_esc ----------------------------------------------------------------
 
 variant3 <- get_variant(priocomp_zproject, 3)
-variant3 <- setup_sppdata(variant3, group = "ALL")
-variant3 <- setup_groups(variant3, group = "ALL", weights = TRUE)
+variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide/",
+                                                     "data/processed/features/jrc"), 
+                          recursive = TRUE, override_path = override_path)
+variant3 <- set_dat_param(variant3, "removal rule", 2)
 variant3 <- setup_ppa(variant3)
 save_changes(variant3)
 
-## 04_abf_wgt ----------------------------------------------------------------
+## 04_abf_esf ----------------------------------------------------------------
 
 variant4 <- get_variant(priocomp_zproject, 4)
-variant4 <- setup_sppdata(variant4, group = "ALL")
-variant4 <- setup_groups(variant4, group = "ALL", weights = TRUE)
+variant4 <- setup_sppdata(variant4, group = "esf")
+variant4 <- setup_groups(variant4, group = "esf", weights = TRUE)
 variant4 <- set_dat_param(variant4, "removal rule", 2)
 variant4 <- setup_ppa(variant4)
 save_changes(variant4)
 
-## 05_caz_wgt_cst ------------------------------------------------------------
+## 05_abf_bio_car ------------------------------------------------------------
 
 variant5 <- get_variant(priocomp_zproject, 5)
-variant5 <- setup_sppdata(variant5, group = "ALL")
-variant5 <- setup_groups(variant5, group = "ALL", weights = TRUE)
-variant5 <- setup_costs(variant5, group = "ALL")
+variant5 <- setup_sppdata(variant5, spp_file_dir = c("data/processed/features/udr/",
+                                                     "data/processed/features/provide/carbon_sequestration/"), 
+                          recursive = TRUE, override_path = override_path)
+variant5 <- setup_groups(variant5, group = "bio_car", weights = TRUE)
 variant5 <- setup_ppa(variant5)
 save_changes(variant5)
 
