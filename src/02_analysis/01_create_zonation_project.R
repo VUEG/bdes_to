@@ -21,7 +21,7 @@ NBIRDS <- 404
 NMAMMALS <- 164
 NREPTILES <- 112
 
-NESFEATURES <- 10
+NESFEATURES <- 9
 NBDFEATURES <- NAMPHIBIANS + NBIRDS + NMAMMALS + NREPTILES
 NALLFEATURES <- NESFEATURES + NBDFEATURES
 
@@ -38,29 +38,6 @@ GROUPS_BD <- c(rep(1, NAMPHIBIANS), rep(2, NBIRDS),
 GROUPNAMES_BD <- c("1" = "amphibians", "2" = "birds", "3" = "mammals",
                    "4" = "reptiles")
 
-# Weights
-
-# Create two weight vectors: 1) equal weights for all features (1.0) and
-# zero-weight for costs (0.0), and 2) equal aggregate weights.
-
-# 1) Equal feature weights
-EQUAL_WEIGHTS_ALL <- c(rep(1, NESFEATURES), rep(1, NBDFEATURES))
-EQUAL_WEIGHTS_ES <- c(rep(1, NESFEATURES))
-EQUAL_WEIGHTS_BD <- c(rep(1, NBDFEATURES))
-
-# 2) Equal group aggregate weights
-
-# Each group has an equal aggregate weight. To have more intuitive values,
-# set the weights of the most numerous group (BD) to 1.0 and have the the
-# weights in other groups to be multiples of 1.0.
-W_ES <- rep(NBDFEATURES / NESFEATURES, NESFEATURES)
-W_BD <- rep(1, NBDFEATURES)
-
-GROUP_WEIGHTS_ALL <- round(c(W_ES, W_BD), 3)
-
-GROUP_WEIGHTS_ES <- EQUAL_WEIGHTS_ES
-
-GROUP_WEIGHTS_BD <- EQUAL_WEIGHTS_BD
 
 # Project variables
 
@@ -111,22 +88,19 @@ setup_groups <- function(variant, group, weights) {
     } else {
       sppweights(variant) <- EQUAL_WEIGHTS_ALL
     }
-  } else if (group == "ES") {
+  } else if (group == "esc") {
     groups(variant) <- GROUPS_ES
     groupnames(variant) <- GROUPNAMES_ES
-    if (weights) {
-      sppweights(variant) <- GROUP_WEIGHTS_ES
-    } else {
-      sppweights(variant) <- EQUAL_WEIGHTS_ES
-    }
-  } else if (group == "BD") {
+    sppweights(variant) <- c(rep(1, NESFEATURES))
+  } else if (group == "bio") {
     groups(variant) <- GROUPS_BD
     groupnames(variant) <- GROUPNAMES_BD
-    if (weights) {
-      sppweights(variant) <- GROUP_WEIGHTS_BD
-    } else {
-      sppweights(variant) <- EQUAL_WEIGHTS_BD
-    }
+    sppweights(variant) <- c(rep(1, NBDFEATURES))
+  } else if (group == "bio_car") {
+    groups(variant) <- c(GROUPS_BD, 5)
+    groupnames(variant) <- c(GROUPNAMES_BD, "5" = "ecosystem_services")
+    # Carbon gets the same weight as all BD features together
+    sppweights(variant) <- c(rep(1, NBDFEATURES), NBDFEATURES)
   } else {
     stop("Unknown group: ", group)
   }
@@ -195,7 +169,7 @@ override_path <- "../../../data/processed/features"
 variant1 <- get_variant(priocomp_zproject, 1)
 variant1 <- setup_sppdata(variant1, spp_file_dir = "data/processed/features/udr/", 
                           recursive = TRUE, override_path = override_path)
-variant1 <- setup_groups(variant1, group = "BD", weights = FALSE)
+variant1 <- setup_groups(variant1, group = "bio", weights = FALSE)
 variant1 <- set_dat_param(variant1, "removal rule", 2)
 variant1 <- setup_ppa(variant1)
 save_changes(variant1)
@@ -216,6 +190,7 @@ variant3 <- get_variant(priocomp_zproject, 3)
 variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide/",
                                                      "data/processed/features/jrc"), 
                           recursive = TRUE, override_path = override_path)
+variant3 <- setup_groups(variant3, group = "esc", weights = FALSE)
 variant3 <- set_dat_param(variant3, "removal rule", 2)
 variant3 <- setup_ppa(variant3)
 save_changes(variant3)
