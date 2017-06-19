@@ -16,6 +16,11 @@
             - README.md
           resources:
             - air_quality.tif
+      - air_quality_flow_zones:
+          category: ecosystemservices
+          metadata:
+          resources:
+            - air_quality_flow_zones.zip
   - provider: provide
     collections:
       - carbon_sequestration:
