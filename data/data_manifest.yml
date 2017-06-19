@@ -43,6 +43,10 @@
           category: ecosystemservices
           resources:
           - floodregulation.tif
+      - floodregulation_flow_zones:
+          category: ecosystemservices
+          resources:
+          - floodregulation_flow_zones.zip
       - nature_tourism:
           category: ecosystemservices
           resources:
