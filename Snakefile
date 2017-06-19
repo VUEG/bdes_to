@@ -330,8 +330,8 @@ rule harmonize_data:
         clip_shp=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
     output:
         # NOTE: UDR_SRC_DATASETS do not need to processed
-        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS]),
-        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS]
+        warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS if not path.endswith(".zip")]),
+        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS if not path.endswith(".zip")]
     log:
         "logs/harmonize_data.log"
     message:
@@ -340,46 +340,58 @@ rule harmonize_data:
         llogger = utils.get_local_logger("harmonize_data", log[0])
         nsteps = len(input.external)
         for i, s_raster in enumerate(input.external):
-            ## WARP
-            # Target raster
-            warped_raster = s_raster.replace("external", "interim/warped")
-            # No need to process the snap raster, just copy it
-            prefix = utils.get_iteration_prefix(i+1, nsteps)
-            if s_raster == input.like_raster:
-                llogger.info("{0} Copying dataset {1}".format(prefix, s_raster))
-                llogger.debug("{0} Target dataset {1}".format(prefix, warped_raster))
-                ret = shell("cp {s_raster} {warped_raster}", read=True)
-            else:
-                llogger.info("{0} Warping dataset {1}".format(prefix, s_raster))
-                llogger.debug("{0} Target dataset {1}".format(prefix, warped_raster))
-                ret = shell("rio warp " + s_raster + " --like " + input.like_raster + \
-                            " " + warped_raster + " --dst-crs " + str(PROJECT_CRS) + \
-                            " --res " + str(PROJECT_RES) + \
-                            " --co 'COMPRESS=DEFLATE' --threads {threads}")
-            for line in utils.process_stdout(ret, prefix=prefix):
-                llogger.debug(line)
-            ## CLIP
-            harmonized_raster = warped_raster.replace("data/interim/warped", "data/processed/features")
-            llogger.info("{0} Clipping dataset {1}".format(prefix, warped_raster))
-            llogger.debug("{0} Target dataset {1}".format(prefix, harmonized_raster))
-            cmd_str = "gdalwarp -cutline {0} {1} {2} -co COMPRESS=DEFLATE".format(input.clip_shp, warped_raster, harmonized_raster)
-            for line in utils.process_stdout(shell(cmd_str, read=True), prefix=prefix):
-                llogger.debug(line)
 
-            # Rescale (normalize) dataset if needed
-            org_raster = os.path.basename(harmonized_raster)
-            if org_raster in NORMALIZED_DATASETS.keys():
-                rescaled_raster = harmonized_raster.replace(org_raster,
-                                                            NORMALIZED_DATASETS[org_raster])
-                llogger.info("{0} Rescaling dataset {1}".format(prefix, harmonized_raster))
-                llogger.debug("{0} Target dataset {1}".format(prefix, rescaled_raster))
-                spatutils.rescale_raster(harmonized_raster, rescaled_raster,
-                                         method="normalize",
-                                         only_positive=True, verbose=False)
-                os.remove(harmonized_raster)
-                llogger.debug("{0} Renaming dataset {1} to {2}".format(prefix, rescaled_raster, harmonized_raster))
-                os.rename(rescaled_raster, harmonized_raster)
-                harmonized_raster = rescaled_raster
+            # The assumption is that zips don't need anything else but
+            # extraction
+            if s_raster.endswith(".zip"):
+                target_dir = s_raster.replace("external", "processed")
+                target_dir = os.path.dirname(target_dir)
+                if not os.path.exists(target_dir):
+                    os.mkdir(target_dir)
+                prefix = utils.get_iteration_prefix(i+1, nsteps)
+                llogger.info("{0} Unzipping dataset {1}".format(prefix, s_raster))
+                shell("unzip -o {} -d {} >& {}".format(s_raster, target_dir, log[0]))
+            else:
+                ## WARP
+                # Target raster
+                warped_raster = s_raster.replace("external", "interim/warped")
+                # No need to process the snap raster, just copy it
+                prefix = utils.get_iteration_prefix(i+1, nsteps)
+                if s_raster == input.like_raster:
+                    llogger.info("{0} Copying dataset {1}".format(prefix, s_raster))
+                    llogger.debug("{0} Target dataset {1}".format(prefix, warped_raster))
+                    ret = shell("cp {s_raster} {warped_raster}", read=True)
+                else:
+                    llogger.info("{0} Warping dataset {1}".format(prefix, s_raster))
+                    llogger.debug("{0} Target dataset {1}".format(prefix, warped_raster))
+                    ret = shell("rio warp " + s_raster + " --like " + input.like_raster + \
+                                " " + warped_raster + " --dst-crs " + str(PROJECT_CRS) + \
+                                " --res " + str(PROJECT_RES) + \
+                                " --co 'COMPRESS=DEFLATE' --threads {threads}")
+                for line in utils.process_stdout(ret, prefix=prefix):
+                    llogger.debug(line)
+                ## CLIP
+                harmonized_raster = warped_raster.replace("data/interim/warped", "data/processed/features")
+                llogger.info("{0} Clipping dataset {1}".format(prefix, warped_raster))
+                llogger.debug("{0} Target dataset {1}".format(prefix, harmonized_raster))
+                cmd_str = "gdalwarp -cutline {0} {1} {2} -co COMPRESS=DEFLATE".format(input.clip_shp, warped_raster, harmonized_raster)
+                for line in utils.process_stdout(shell(cmd_str, read=True), prefix=prefix):
+                    llogger.debug(line)
+
+                # Rescale (normalize) dataset if needed
+                org_raster = os.path.basename(harmonized_raster)
+                if org_raster in NORMALIZED_DATASETS.keys():
+                    rescaled_raster = harmonized_raster.replace(org_raster,
+                                                                NORMALIZED_DATASETS[org_raster])
+                    llogger.info("{0} Rescaling dataset {1}".format(prefix, harmonized_raster))
+                    llogger.debug("{0} Target dataset {1}".format(prefix, rescaled_raster))
+                    spatutils.rescale_raster(harmonized_raster, rescaled_raster,
+                                             method="normalize",
+                                             only_positive=True, verbose=False)
+                    os.remove(harmonized_raster)
+                    llogger.debug("{0} Renaming dataset {1} to {2}".format(prefix, rescaled_raster, harmonized_raster))
+                    os.rename(rescaled_raster, harmonized_raster)
+                    harmonized_raster = rescaled_raster
 
 
 ## Set up, run and post-process analyses --------------------------------------

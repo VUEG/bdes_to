@@ -129,21 +129,6 @@ rule get_jrc_data:
             shell("mv {0} {1}".format(input[i], output[i]))
             logger.info("Downloaded {0} to {1}".format(input[i], output[i]))
 
-# Rule to extract the data from from the zip archive.
-rule extract_flowzone_data:
-    input:
-        "external/jrc/air_quality_flow_zones/air_quality_flow_zones.zip",
-        "external/provide/floodregulation_flow_zones/floodregulation_flow_zones.zip"
-    output:
-        "processed/jrc/",
-        "processed/provide/"
-    log:
-        "log/extract_flowzone_data.log"
-    message: "Extracting raster(s) from {input}."
-    run:
-        for input_zip, outputdir in zip(input, output):
-            shell("unzip -o {} -d {} >& {}".format(input_zip, outputdir, log[0]))
-
 rule get_provide_data:
     input:
         HTTP.remote(PROVIDE_SRC_DATASETS,
