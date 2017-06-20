@@ -12,7 +12,7 @@ import time
 from importlib.machinery import SourceFileLoader
 from subprocess import call
 
-utils = SourceFileLoader("lib.utils", "../src/00_lib/utils.py").load_module()
+utils = SourceFileLoader("lib.utils", "src/00_lib/utils.py").load_module()
 
 
 def timing(f):
@@ -36,7 +36,7 @@ def extract_by_value(field_value, infile, clipfile, field, outdir,
         logger = multiprocessing.get_logger()
 
         out_raster = infile.split(".")[0] + "_" + field_value + ".tif"
-        out_raster = os.path.join(outdir, out_raster)
+        out_raster = os.path.join(outdir, os.path.basename(out_raster))
 
         #logger.info("Processing {} into {}".format(infile, out_raster))
 
