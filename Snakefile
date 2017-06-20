@@ -12,8 +12,9 @@ import sys
 from importlib.machinery import SourceFileLoader
 
 ## LOAD MODULES --------------------------------------------------------------
-utils = SourceFileLoader("lib.utils", "src/00_lib/utils.py").load_module() # yes
-spatutils = SourceFileLoader("lib.spatutils", "src/00_lib/spatutils.py").load_module() # yes
+utils = SourceFileLoader("lib.utils", "src/00_lib/utils.py").load_module()
+spatutils = SourceFileLoader("lib.spatutils", "src/00_lib/spatutils.py").load_module()
+cutter = SourceFileLoader("lib.cutter", "src/01_pre_processing/cutter.py").load_module()
 similarity = SourceFileLoader("results.similarity", "src/03_post_processing/similarity.py").load_module()
 
 ## GLOBALS --------------------------------------------------------------------
@@ -344,8 +345,10 @@ rule harmonize_data:
             # The assumption is that zips don't need anything else but
             # extraction
             if s_raster.endswith(".zip"):
-                target_dir = s_raster.replace("external", "processed")
+                target_dir = s_raster.replace("external", "processed/features_flow_zones")
                 target_dir = os.path.dirname(target_dir)
+                # Get rid of the last path component to avoid repetition
+                target_dir = os.path.sep.join(target_dir.split(os.path.sep)[:-1])
                 if not os.path.exists(target_dir):
                     os.mkdir(target_dir)
                 prefix = utils.get_iteration_prefix(i+1, nsteps)
@@ -394,6 +397,31 @@ rule harmonize_data:
                     harmonized_raster = rescaled_raster
 
 
+rule process_flowzones:
+    input:
+        src=["data/external/provide/cultural_landscape_index_agro/cultural_landscape_index_agro.tif",
+            "data/external/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif"],
+        flow_zone_units=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
+    output:
+        "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones",
+        "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones"
+    log:
+        "logs/process_flowzones_data.log"
+    threads: 4
+    message:
+        "Processing flow zones using {threads} cores..."
+    run:
+        import multiprocessing
+        llogger = utils.get_local_logger("process_flowzones", log[0])
+
+        for in_raster, outdir in zip(input.src, output):
+            cmd_str = "src/01_pre_processing/cutter.py {} {} {} -f {} -c {}".format(in_raster,
+                                                                                    input.flow_zone_units,
+                                                                                    outdir,"NUTS_ID",
+                                                                                    threads)
+            print(cmd_str)
+            for line in utils.process_stdout(shell(cmd_str, read=True)):
+                llogger.debug(line)
 ## Set up, run and post-process analyses --------------------------------------
 
 # # Zonation ---------------------------------------------------------------------
