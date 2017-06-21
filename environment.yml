@@ -27,9 +27,10 @@ dependencies:
   - rasterstats
   - snakemake
   - yaml
+  - 7z
   - pip:
       - colorlog
       - easywebdav
       - geopandas
-      - python-dotenv 
+      - python-dotenv
       - tabulate
