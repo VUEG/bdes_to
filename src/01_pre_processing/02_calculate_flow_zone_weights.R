@@ -1,7 +1,5 @@
 library(raster)
-library(sf)
 library(tidyverse)
-
 
 # Helper functions --------------------------------------------------------
 
