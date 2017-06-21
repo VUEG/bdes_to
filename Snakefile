@@ -7,9 +7,10 @@ import os
 import pandas as pd
 import rasterio
 import rasterio.tools.mask
-import rasterstats
 import sys
 from importlib.machinery import SourceFileLoader
+from rasterstats import zonal_stats
+
 
 ## LOAD MODULES --------------------------------------------------------------
 utils = SourceFileLoader("lib.utils", "src/00_lib/utils.py").load_module()
@@ -399,8 +400,8 @@ rule harmonize_data:
 
 rule process_flowzones:
     input:
-        src=["data/external/provide/cultural_landscape_index_agro/cultural_landscape_index_agro.tif",
-            "data/external/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif"],
+        src=["data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif",
+             "data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif"],
         flow_zone_units=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
     output:
         "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones",
@@ -411,17 +412,38 @@ rule process_flowzones:
     message:
         "Processing flow zones using {threads} cores..."
     run:
-        import multiprocessing
         llogger = utils.get_local_logger("process_flowzones", log[0])
 
         for in_raster, outdir in zip(input.src, output):
             cmd_str = "src/01_pre_processing/cutter.py {} {} {} -f {} -c {}".format(in_raster,
                                                                                     input.flow_zone_units,
                                                                                     outdir,"NUTS_ID",
-                                                                                    threads)
+                                                                                        threads)
             print(cmd_str)
             for line in utils.process_stdout(shell(cmd_str, read=True)):
                 llogger.debug(line)
+
+rule calculate_flowzone_weights:
+    input:
+        cli_agro="data/processed/features/provide/cultural_landscape_index_agro/cultural_landscape_index_agro.tif",
+        cli_forest="data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif",
+        flow_zone_units=utils.pick_from_list(rules.preprocess_nuts_level0_data.output.processed, ".shp")
+    output:
+        cli_agro="data/WeightsTableCLIagro.txt",
+        cli_forest="data/WeightsTableCLIforest.txt"
+    log:
+        "logs/calculate_flowzone_weights.log"
+    message:
+        "Calculating flowzone weights..."
+    run:
+        llogger = utils.get_local_logger("calculate_flowzone_weights", log[0])
+
+        llogger.info(" [1/2] Calculating zonal stats for {}".format(input.cli_agro))
+        stats = zonal_stats(input.flow_zone_units, input.cli_agro,
+                            stats=['sum'])
+        print(stats)
+
+
 ## Set up, run and post-process analyses --------------------------------------
 
 # # Zonation ---------------------------------------------------------------------
