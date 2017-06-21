@@ -65,6 +65,8 @@ def cookie_cut(infile, clipfile, field, outdir, cpus, logger=None,
         field_values = [item['properties'][field] for item in clip_src]
         # Check if there are multiple same values
         unique_field_values = list(set(field_values))
+        # Convert to str
+        unique_field_values = [str(value) for value in unique_field_values]
         unique_field_values.sort()
         if len(field_values) != len(unique_field_values):
             logger.warning("{} contains multiple same values. Only one instance is retained.".format(field))
