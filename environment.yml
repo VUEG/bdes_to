@@ -24,12 +24,12 @@ dependencies:
   - rasterio
   - r-essentials
   - scipy
+  - rasterstats
   - snakemake
   - yaml
   - pip:
       - colorlog
       - easywebdav
       - geopandas
-      - python-dotenv
-      - rasterstats
+      - python-dotenv 
       - tabulate
