@@ -47,3 +47,7 @@ process_zip("data/transfer/willem verhagen - airquality.zip",
 process_zip("data/transfer/willem verhagen - floodregulation.zip",
             "data/transfer/floodregulation_flow_zones.zip", keep_translated = TRUE)
 
+# WARNING! This takes a long time
+translate_dir(src_dir = "~/data/BDES_TO/processed/features_flow_zones/provide/pollination/",
+              dst_dir = "~/data/BDES_TO/processed/features_flow_zones/provide/pollination_deflate/", 
+              cpus = 3) 
