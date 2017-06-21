@@ -417,7 +417,7 @@ rule process_flowzones:
         for in_raster, outdir in zip(input.src, output):
             cmd_str = "src/01_pre_processing/cutter.py {} {} {} -f {} -c {}".format(in_raster,
                                                                                     input.flow_zone_units,
-                                                                                    outdir,"NUTS_ID",
+                                                                                    outdir,"ID",
                                                                                         threads)
             print(cmd_str)
             for line in utils.process_stdout(shell(cmd_str, read=True)):
