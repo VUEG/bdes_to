@@ -36,7 +36,7 @@ NESC <- count_files(c("data/processed/features/provide/",
                       "data/processed/features/jrc/"))
 # Flowzones
 # Local
-NESF_LOC <- count_files(c("data/processed/features_flow_zones/provide/pollination_flows_flow_zones/",
+NESF_LOC <- count_files(c("data/processed/features_flow_zones/provide/pollination_flow_flow_zones/",
                           "data/processed/features_flow_zones/jrc/air_quality_flow_zones/"))
 # Regional
 NESF_REG <- count_files(c("data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/",
@@ -70,9 +70,27 @@ PROJECT_NAME <- "bdes_to"
 
 # Flowzone-specifc weights
 fz_weights <- list()
-fz_weights[["airquality"]] <- readr::read_tsv("data/WeightsTableAirq.txt")
-fz_weights[["floodregulation"]] <- readr::read_tsv("data/WeightsTableFloodReg.txt")
-fz_weights[["pollination"]] <- readr::read_tsv("data/WeightsTablePollination.txt")
+fz_weights[["pollination"]] <- readr::read_tsv("data/WeightsTablePollination.txt") %>% 
+  dplyr::select(FID, SUM, weight) %>% 
+  dplyr::rename(id = FID, sum = SUM) %>% 
+  dplyr::mutate(name = paste0("pollFZ", id))
+fz_weights[["airquality"]] <- readr::read_tsv("data/WeightsTableAirq.txt") %>% 
+  dplyr::select(FID, SUM, weightAirq) %>% 
+  dplyr::rename(id = FID, sum = SUM, weight = weightAirq) %>% 
+  dplyr::mutate(name = paste0("airqFZ", id))
+fz_weights[["cli_agro"]] <- readr::read_tsv("data/WeightsTableCLIagro.txt") %>% 
+  dplyr::select(zone, ol_sum, weight) %>% 
+  dplyr::rename(id = zone, sum = ol_sum) %>% 
+  dplyr::mutate(name = paste0("cultural_landscape_index_agro_", id))
+fz_weights[["cli_forest"]] <- readr::read_tsv("data/WeightsTableCLIforest.txt") %>% 
+  dplyr::select(zone, ol_sum, weight) %>% 
+  dplyr::rename(id = zone, sum = ol_sum) %>% 
+  dplyr::mutate(name = paste0("cultural_landscape_index_forest_", id))
+fz_weights[["floodregulation"]] <- readr::read_tsv("data/WeightsTableFloodReg.txt") %>% 
+  dplyr::select(FID, SUM, weightFlood) %>% 
+  dplyr::rename(id = FID, sum = SUM, weight = weightFlood) %>% 
+  dplyr::mutate(name = paste0("floodFZ", id))
+fz_weights <- dplyr::bind_rows(fz_weights)
 
 # Helper functions --------------------------------------------------------
 
@@ -101,6 +119,10 @@ create_sh_file <- function(x) {
   return(invisible(TRUE))
 }
 
+get_weight <- function(x, weight_table, id_field, splitter) {
+  
+}
+
 setup_groups <- function(variant, group) {
   
   groups_bd <- c(rep(1, NAMPHIBIANS), rep(2, NBIRDS),
@@ -119,6 +141,12 @@ setup_groups <- function(variant, group) {
   } else if (group == "esf") {
     groups(variant) <- c(rep(1, NESF))
     groupnames(variant) <- c("1" = "esf")
+    
+    spp_data <- zonator::sppdata(variant)
+    spp_data <- dplyr::left_join(spp_data, fz_weights, 
+                                 by = c("name" = "name"))
+    browser()
+    
     sppweights(variant) <- c(rep(1 / NESF_LOC, NESF_LOC),
                              rep(1 / NESF_REG, NESF_REG),
                              rep(1 / NESF_GLO, NESF_GLO))
@@ -168,7 +196,7 @@ setup_ppa <- function(variant) {
   return(variant)
 }
 
-setup_sppdata <- function(variant, ...) {
+setup_sppdata <- function(variant, prefix, ...) {
   
   spp_file <- variant@call.params$spp.file
   # Delete the existing (dummy) spp-file 
@@ -177,6 +205,11 @@ setup_sppdata <- function(variant, ...) {
   zonator::create_spp(filename = spp_file, ...)
   # Read in the spp data and manually create the name column
   spp_data <- zonator::read_spp(spp_file) 
+  if (!is.null(prefix)) {
+    # Manually prefix the file paths
+    spp_data$filepath <- paste0(prefix, spp_data$filepath)
+  }
+  
   spp_data$name <- gsub(".tif", "", basename(spp_data$filepath))
   zonator::sppdata(variant) <- spp_data
   return(variant)
@@ -202,13 +235,12 @@ priocomp_zproject <- load_zproject(file.path(ZSETUP_ROOT, PROJECT_NAME))
 
 # Set run configuration parameters --------------------------------------------
 
-override_path <- "../../../data/processed/features"
 
 ## 01_abf_bio -----------------------------------------------------------------
 
 variant1 <- get_variant(priocomp_zproject, 1)
-variant1 <- setup_sppdata(variant1, spp_file_dir = "data/processed/features/udr/", 
-                          recursive = TRUE, override_path = override_path)
+variant1 <- setup_sppdata(variant1, spp_file_dir = "data/processed/features/udr", 
+                          recursive = TRUE, prefix = "../../")
 variant1 <- setup_groups(variant1, group = "bio")
 variant1 <- set_dat_param(variant1, "removal rule", 2)
 variant1 <- setup_ppa(variant1)
@@ -217,8 +249,8 @@ save_changes(variant1)
 ## 02_abf_car -----------------------------------------------------------------
 
 variant2 <- get_variant(priocomp_zproject, 2)
-variant2 <- setup_sppdata(variant2, spp_file_dir = "data/processed/features/provide/carbon_sequestration/", 
-                          recursive = FALSE, override_path = override_path)
+variant2 <- setup_sppdata(variant2, spp_file_dir = "data/processed/features/provide/carbon_sequestration", 
+                          recursive = FALSE, prefix = "../../")
 # Set removal rule
 variant2 <- set_dat_param(variant2, "removal rule", 2)
 variant2 <- setup_ppa(variant2)
@@ -227,9 +259,9 @@ save_changes(variant2)
 ## 03_abf_esc ----------------------------------------------------------------
 
 variant3 <- get_variant(priocomp_zproject, 3)
-variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide/",
+variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide",
                                                      "data/processed/features/jrc"), 
-                          recursive = TRUE, override_path = override_path)
+                          recursive = TRUE, prefix = "../../")
 variant3 <- setup_groups(variant3, group = "esc")
 variant3 <- set_dat_param(variant3, "removal rule", 2)
 variant3 <- setup_ppa(variant3)
@@ -239,14 +271,14 @@ save_changes(variant3)
 
 variant4 <- get_variant(priocomp_zproject, 4)
 variant4 <- setup_sppdata(variant4, 
-                          spp_file_dir = c("data/processed/features_flow_zones/provide/pollination_flows_flow_zones/",
-                                           "data/processed/features_flow_zones/jrc/air_quality_flow_zones/",
-                                           "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/",
-                                           "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/",
-                                           "data/processed/features_flow_zones/provide/floodregulation_flow_zones/",
+                          spp_file_dir = c("data/processed/features_flow_zones/provide/pollination_flow_flow_zones",
+                                           "data/processed/features_flow_zones/jrc/air_quality_flow_zones",
+                                           "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones",
+                                           "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones",
+                                           "data/processed/features_flow_zones/provide/floodregulation_flow_zones",
                                            "data/processed/features/provide/carbon_sequestration/",
-                                           "data/processed/features/provide/nature_tourism/"),
-                          recursive = TRUE, override_path = override_path)
+                                           "data/processed/features/provide/nature_tourism"),
+                          recursive = TRUE, prefix = "../../")
 variant4 <- setup_groups(variant4, group = "esf")
 variant4 <- set_dat_param(variant4, "removal rule", 2)
 variant4 <- setup_ppa(variant4)
