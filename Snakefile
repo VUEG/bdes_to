@@ -369,10 +369,11 @@ rule harmonize_data:
                 else:
                     llogger.info("{0} Warping dataset {1}".format(prefix, s_raster))
                     llogger.debug("{0} Target dataset {1}".format(prefix, warped_raster))
-                    ret = shell("rio warp " + s_raster + " --like " + input.like_raster + \
+		    #import pdb; pdb.set_trace()
+                    ret = shell("rio warp " + s_raster + " --like " + input.like_raster[0] + \
                                 " " + warped_raster + " --dst-crs " + str(PROJECT_CRS) + \
                                 " --res " + str(PROJECT_RES) + \
-                                " --co 'COMPRESS=DEFLATE' --threads {threads}")
+                                " --co 'COMPRESS=DEFLATE'")
                 for line in utils.process_stdout(ret, prefix=prefix):
                     llogger.debug(line)
                 ## CLIP
