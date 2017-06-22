@@ -333,7 +333,8 @@ rule harmonize_data:
     output:
         # NOTE: UDR_SRC_DATASETS do not need to processed
         warped=temp([path.replace("external", "interim/warped") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS if not path.endswith(".zip")]),
-        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS if not path.endswith(".zip")]
+        harmonized=[path.replace("external", "processed/features") for path in DATADRYAD_SRC_DATASETS+PROVIDE_SRC_DATASETS+JRC_SRC_DATASETS if not path.endswith(".zip")],
+        output_fz="data/processed/features_flow_zones/provide"
     log:
         "logs/harmonize_data.log"
     message:
