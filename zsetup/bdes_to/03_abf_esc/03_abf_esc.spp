@@ -1,9 +1,7 @@
-1 1 1 1 0.25 ../../data/processed/features/provide/carbon_sequestration/carbon_sequestration.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/cultural_landscape_index_agro/cultural_landscape_index_agro.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/erosion_prevention/erosion_prevention.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/floodregulation/floodregulation.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/nature_tourism/nature_tourism.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/pollination_flows/pollination_flows.tif
-1 1 1 1 0.25 ../../data/processed/features/provide/species_richness_vascular_plants/species_richness_vascular_plants.tif
-1 1 1 1 0.25 ../../data/processed/features/jrc/air_quality/air_quality.tif
+0.500000000 1 1 1 0.25 ../../data/processed/features/provide/pollination_flows/pollination_flows.tif
+0.500000000 1 1 1 0.25 ../../data/processed/features/jrc/air_quality/air_quality.tif
+0.333333333 1 1 1 0.25 ../../data/processed/features/provide/cultural_landscape_index_agro/cultural_landscape_index_agro.tif
+0.333333333 1 1 1 0.25 ../../data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif
+0.333333333 1 1 1 0.25 ../../data/processed/features/provide/floodregulation/floodregulation.tif
+0.500000000 1 1 1 0.25 ../../data/processed/features/provide/carbon_sequestration//carbon_sequestration.tif
+0.500000000 1 1 1 0.25 ../../data/processed/features/provide/nature_tourism/nature_tourism.tif
