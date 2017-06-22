@@ -2,7 +2,7 @@
 
 ## Trade-offs between biodiversity and ecosystem services in Europe
 
-__Version:__ 0.1.0  
+__Version:__ 0.2.0  
 
 ### Introduction
 
