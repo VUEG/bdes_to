@@ -70,27 +70,52 @@ PROJECT_NAME <- "bdes_to"
 
 # Flowzone-specifc weights
 fz_weights <- list()
+# Local
 fz_weights[["pollination"]] <- readr::read_tsv("data/WeightsTablePollination.txt") %>% 
   dplyr::select(FID, SUM, weight) %>% 
   dplyr::rename(id = FID, sum = SUM) %>% 
-  dplyr::mutate(name = paste0("pollFZ", id))
+  dplyr::mutate(name = paste0("pollFZ", id), group = "local")
 fz_weights[["airquality"]] <- readr::read_tsv("data/WeightsTableAirq.txt") %>% 
   dplyr::select(FID, SUM, weightAirq) %>% 
   dplyr::rename(id = FID, sum = SUM, weight = weightAirq) %>% 
-  dplyr::mutate(name = paste0("airqFZ", id))
+  dplyr::mutate(name = paste0("airqFZ", id), group = "local")
+# Regional
 fz_weights[["cli_agro"]] <- readr::read_tsv("data/WeightsTableCLIagro.txt") %>% 
   dplyr::select(zone, ol_sum, weight) %>% 
   dplyr::rename(id = zone, sum = ol_sum) %>% 
-  dplyr::mutate(name = paste0("cultural_landscape_index_agro_", id))
+  dplyr::mutate(name = paste0("cultural_landscape_index_agro_", id), group = "regional")
 fz_weights[["cli_forest"]] <- readr::read_tsv("data/WeightsTableCLIforest.txt") %>% 
   dplyr::select(zone, ol_sum, weight) %>% 
   dplyr::rename(id = zone, sum = ol_sum) %>% 
-  dplyr::mutate(name = paste0("cultural_landscape_index_forest_", id))
+  dplyr::mutate(name = paste0("cultural_landscape_index_forest_", id), group = "regional")
 fz_weights[["floodregulation"]] <- readr::read_tsv("data/WeightsTableFloodReg.txt") %>% 
   dplyr::select(FID, SUM, weightFlood) %>% 
   dplyr::rename(id = FID, sum = SUM, weight = weightFlood) %>% 
-  dplyr::mutate(name = paste0("floodFZ", id))
+  dplyr::mutate(name = paste0("floodFZ", id), group = "regional")
+# Global
+fz_weights[["carbon"]] <- readr::read_tsv("data/WeightsTableCarbon.txt") %>% 
+  dplyr::select(zone, ol_sum, weight) %>% 
+  dplyr::rename(id = zone, sum = ol_sum) %>% 
+  dplyr::mutate(name = "carbon_sequestration", group = "global")
+fz_weights[["nature_tourism"]] <- readr::read_tsv("data/WeightsTableNtourism.txt") %>% 
+  dplyr::select(zone, ol_sum, weight) %>% 
+  dplyr::rename(id = zone, sum = ol_sum) %>% 
+  dplyr::mutate(name = "nature_tourism", group = "global")
+# Bind all
 fz_weights <- dplyr::bind_rows(fz_weights)
+# Balance the weights so that:
+# 1. Each group (local, regional and global) has the same aggregate weight
+
+group_aggs <- fz_weights %>% 
+  group_by(group) %>% 
+  summarise(
+    agg = sum(weight)
+  )
+
+fz_weights <- fz_weights %>% 
+  dplyr::left_join(group_aggs, by = c("group" = "group")) %>% 
+  dplyr::mutate(weight = weight / agg) %>% 
+  dplyr::select(-group, -agg)
 
 # Helper functions --------------------------------------------------------
 
@@ -119,8 +144,25 @@ create_sh_file <- function(x) {
   return(invisible(TRUE))
 }
 
-get_weight <- function(x, weight_table, id_field, splitter) {
+
+process_esf_sppdata <- function(spp_data, weights) {
+  spp_data <- dplyr::left_join(spp_data, weights, 
+                               by = c("name" = "name"))
   
+  if (any(is.na(spp_data$weight.y))) {
+    missing_weights <- spp_data %>% 
+      dplyr::filter(is.na(weight.y)) %>% 
+      dplyr::pull(name)
+    warning("Following flow zones have no additional weights: ", 
+            paste(missing_weights, collapse = ", "), ". Setting weight to zero.")
+    spp_data[is.na(spp_data$weight.y), ]$weight.y <- 0
+  }
+  
+  spp_data <- spp_data %>% 
+    dplyr::mutate(weight = weight.y) %>% 
+    dplyr::select(weight, dplyr::everything(), 
+                  -weight.x, -weight.y, -sum, -id)
+  return(spp_data)
 }
 
 setup_groups <- function(variant, group) {
@@ -139,20 +181,15 @@ setup_groups <- function(variant, group) {
     groupnames(variant) <- c("1" = "esc")
     sppweights(variant) <- c(rep(1, NESC))
   } else if (group == "esf") {
-    groups(variant) <- c(rep(1, NESF))
-    groupnames(variant) <- c("1" = "esf")
-    
-    spp_data <- zonator::sppdata(variant)
-    spp_data <- dplyr::left_join(spp_data, fz_weights, 
-                                 by = c("name" = "name"))
-    browser()
-    
-    sppweights(variant) <- c(rep(1 / NESF_LOC, NESF_LOC),
-                             rep(1 / NESF_REG, NESF_REG),
-                             rep(1 / NESF_GLO, NESF_GLO))
+    sppdata(variant) <- process_esf_sppdata(zonator::sppdata(variant), 
+                                            fz_weights)
+    groups(variant) <- c(rep(1, NESF_LOC),
+                         rep(2, NESF_REG),
+                         rep(3, NESF_GLO))
+    groupnames(variant) <- c("1" = "esf_loc", "2" = "esf_reg", "3" = "esf_glo")
   } else if (group == "bio_car") {
-    groups(variant) <- c(groups_bd, 5)
-    groupnames(variant) <- c(groupnames_bd, "5" = "car")
+    groups(variant) <- c(rep(1, NBIO), 2)
+    groupnames(variant) <- c("1" = "bio", "2" = "car")
     # Carbon gets the same weight as all BD features together
     sppweights(variant) <- c(rep(1, NBIO), NBIO)
   } else if (group == "bio_esc") {
@@ -161,14 +198,17 @@ setup_groups <- function(variant, group) {
     # Carbon gets the same weight as all BD features together
     sppweights(variant) <- c(rep(1, NBIO), rep((NBIO / NESC), NESC))
   } else if (group == "bio_esf") {
+    # Get only ESF data
+    spp_data <- zonator::sppdata(variant)
+    spp_data_esf <- spp_data[(NBIO + 1):nrow(spp_data),]
+    spp_data_esf <- process_esf_sppdata(spp_data_esf, fz_weights)
+    # ESF are weighted internally as in "esf". These weights add up
+    # to 9.0, so divide fz_weights
+    spp_data_esf$weight <- spp_data_esf$weight / 3
+    
+    sppweights(variant) <- c(rep((1.0 / NBIO), NBIO), spp_data_esf$weight)
     groups(variant) <- c(rep(1, NBIO), rep(2, NESF))
     groupnames(variant) <- c("1" = "bio", "2" = "esf")
-    # ESF are weighted internally as in "esf". These weights add up
-    # to 1.0
-    esf_weights <- c(rep(1 / 3 / NESF_LOC, NESF_LOC),
-                     rep(1 / 3 / NESF_REG, NESF_REG),
-                     rep(1 / 3 / NESF_GLO, NESF_GLO))
-    sppweights(variant) <- c(rep((1.0 / NBIO), NBIO), esf_weights)
   } else {
     stop("Unknown group: ", group)
   }
@@ -285,11 +325,10 @@ variant4 <- setup_ppa(variant4)
 save_changes(variant4)
 
 ## 05_abf_bio_car ------------------------------------------------------------
-
 variant5 <- get_variant(priocomp_zproject, 5)
 variant5 <- setup_sppdata(variant5, spp_file_dir = c("data/processed/features/udr/",
                                                      "data/processed/features/provide/carbon_sequestration/"), 
-                          recursive = TRUE, override_path = override_path)
+                          recursive = TRUE, prefix = "../../")
 variant5 <- setup_groups(variant5, group = "bio_car")
 variant5 <- setup_ppa(variant5)
 save_changes(variant5)
@@ -300,7 +339,7 @@ variant6 <- get_variant(priocomp_zproject, 6)
 variant6 <- setup_sppdata(variant6, spp_file_dir = c("data/processed/features/udr/",
                                                      "data/processed/features/provide/",
                                                      "data/processed/features/jrc"), 
-                          recursive = TRUE, override_path = override_path)
+                          recursive = TRUE, prefix = "../../")
 variant6 <- setup_groups(variant6, group = "bio_esc")
 variant6 <- set_dat_param(variant6, "removal rule", 2)
 variant6 <- setup_ppa(variant6)
@@ -310,14 +349,15 @@ save_changes(variant6)
 
 variant7 <- get_variant(priocomp_zproject, 7)
 variant7 <- setup_sppdata(variant7, spp_file_dir = c("data/processed/features/udr/",
-                                                     "data/processed/features_flow_zones/provide/pollination_flows_flow_zones/",
-                                                     "data/processed/features_flow_zones/jrc/air_quality_flow_zones/",
-                                                     "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/",
-                                                     "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/",
-                                                     "data/processed/features_flow_zones/provide/floodregulation_flow_zones/",
+                                                     "data/processed/features_flow_zones/provide/pollination_flow_flow_zones",
+                                                     "data/processed/features_flow_zones/jrc/air_quality_flow_zones",
+                                                     "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones",
+                                                     "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones",
+                                                     "data/processed/features_flow_zones/provide/floodregulation_flow_zones",
                                                      "data/processed/features/provide/carbon_sequestration/",
-                                                     "data/processed/features/provide/nature_tourism/"),
-                          recursive = TRUE, override_path = override_path)
+                                                     "data/processed/features/provide/nature_tourism"),
+                          recursive = TRUE, prefix = "../../")
 variant7 <- setup_groups(variant7, group = "bio_esf")
 variant7 <- setup_ppa(variant7)
 save_changes(variant7)
+
