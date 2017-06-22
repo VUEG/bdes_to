@@ -32,8 +32,13 @@ NREPTILES <- count_files("data/processed/features/udr/european_tetrapods/reptile
 NBIO <- NAMPHIBIANS + NBIRDS + NMAMMALS + NREPTILES
 
 # Capacity
-NESC <- count_files(c("data/processed/features/provide/",
-                      "data/processed/features/jrc/"))
+NESC <- count_files(c("data/processed/features/provide/pollination_flows",
+                      "data/processed/features/jrc/air_quality",
+                      "data/processed/features/provide/cultural_landscape_index_agro",
+                      "data/processed/features/provide/cultural_landscape_index_forest",
+                      "data/processed/features/provide/floodregulation",
+                      "data/processed/features/provide/carbon_sequestration/",
+                      "data/processed/features/provide/nature_tourism"))
 # Flowzones
 # Local
 NESF_LOC <- count_files(c("data/processed/features_flow_zones/provide/pollination_flow_flow_zones/",
@@ -177,9 +182,9 @@ setup_groups <- function(variant, group) {
     groupnames(variant) <- groupnames_bd
     sppweights(variant) <- c(rep(1, NBIO))
   } else if (group == "esc") {
-    groups(variant) <- c(rep(1, NESC))
-    groupnames(variant) <- c("1" = "esc")
-    sppweights(variant) <- c(rep(1, NESC))
+    groups(variant) <- c(rep(1, 2), rep(2, 3), rep(3, 2))
+    groupnames(variant) <- c("1" = "esc_loc", "2" = "esc_reg", "3" = "esc_glo")
+    sppweights(variant) <- c(rep(1 / 2, 2), rep(1 / 3, 3), rep(1 / 2, 2))
   } else if (group == "esf") {
     sppdata(variant) <- process_esf_sppdata(zonator::sppdata(variant), 
                                             fz_weights)
@@ -195,8 +200,9 @@ setup_groups <- function(variant, group) {
   } else if (group == "bio_esc") {
     groups(variant) <- c(rep(1, NBIO), rep(2, NESC))
     groupnames(variant) <- c("1" = "bio", "2" = "esc")
-    # Carbon gets the same weight as all BD features together
-    sppweights(variant) <- c(rep(1, NBIO), rep((NBIO / NESC), NESC))
+    # Use the same weight dividsion for esc as before
+    sppweights(variant) <- c(rep(1, NBIO), 
+                             c(rep(1 / 3 / 2, 2), rep(1 / 3 / 3, 3), rep(1 / 3 / 2, 2)) * NBIO)
   } else if (group == "bio_esf") {
     # Get only ESF data
     spp_data <- zonator::sppdata(variant)
@@ -299,8 +305,13 @@ save_changes(variant2)
 ## 03_abf_esc ----------------------------------------------------------------
 
 variant3 <- get_variant(priocomp_zproject, 3)
-variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide",
-                                                     "data/processed/features/jrc"), 
+variant3 <- setup_sppdata(variant3, spp_file_dir = c("data/processed/features/provide/pollination_flows",
+                                                     "data/processed/features/jrc/air_quality",
+                                                     "data/processed/features/provide/cultural_landscape_index_agro",
+                                                     "data/processed/features/provide/cultural_landscape_index_forest",
+                                                     "data/processed/features/provide/floodregulation",
+                                                     "data/processed/features/provide/carbon_sequestration/",
+                                                     "data/processed/features/provide/nature_tourism"), 
                           recursive = TRUE, prefix = "../../")
 variant3 <- setup_groups(variant3, group = "esc")
 variant3 <- set_dat_param(variant3, "removal rule", 2)
@@ -337,8 +348,13 @@ save_changes(variant5)
 
 variant6 <- get_variant(priocomp_zproject, 6)
 variant6 <- setup_sppdata(variant6, spp_file_dir = c("data/processed/features/udr/",
-                                                     "data/processed/features/provide/",
-                                                     "data/processed/features/jrc"), 
+                                                     "data/processed/features/provide/pollination_flows",
+                                                     "data/processed/features/jrc/air_quality",
+                                                     "data/processed/features/provide/cultural_landscape_index_agro",
+                                                     "data/processed/features/provide/cultural_landscape_index_forest",
+                                                     "data/processed/features/provide/floodregulation",
+                                                     "data/processed/features/provide/carbon_sequestration/",
+                                                     "data/processed/features/provide/nature_tourism"), 
                           recursive = TRUE, prefix = "../../")
 variant6 <- setup_groups(variant6, group = "bio_esc")
 variant6 <- set_dat_param(variant6, "removal rule", 2)
