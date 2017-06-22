@@ -7,6 +7,9 @@ get_fz_weights <- function(raster, units) {
   unit_values <- as.data.frame(raster::zonal(raster, units, fun = "sum")) %>% 
     dplyr::rename(ol_sum = sum) %>% 
     dplyr::mutate(weight = ol_sum / sum(ol_sum))
+  if (is.na(unit_values$ol_sum)) {
+    unit_values$weight <- 1.0
+  }
   return(unit_values)
 }
 
