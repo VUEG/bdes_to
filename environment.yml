@@ -27,7 +27,7 @@ dependencies:
   - rasterstats
   - snakemake
   - yaml
-  - 7z
+  - p7zip
   - pip:
       - colorlog
       - easywebdav
