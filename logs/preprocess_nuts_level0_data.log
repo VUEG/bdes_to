@@ -1,6 +1,6 @@
-2017-06-13 11:13:14 [pprocess_nuts0] [INFO ] Reprojected NUTS level 0 data from EPSG:4258 to EPSG:3035
-2017-06-13 11:13:14 [pprocess_nuts0] [DEBUG] ogr2ogr data/interim/reprojected/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp -t_srs "EPSG:3035" data/external/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp
-2017-06-13 11:13:16 [pprocess_nuts0] [DEBUG] Clipped NUTS data to analysis bounds: 2100000.0 1100000.0 6526000.0 5410000.0
-2017-06-13 11:13:16 [pprocess_nuts0] [DEBUG] Selected only a subset of eurostat countries:
-2017-06-13 11:13:16 [pprocess_nuts0] [DEBUG]  AT, BE, BG, CZ, DE, DK, ES, EL, EE, FR, FI, IT, HU, IE, NL, LU, LT, LV, PL, SE, RO, PT, SK, SI, UK
-2017-06-13 11:13:16 [pprocess_nuts0] [DEBUG] Resulting file: data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp
+2017-06-23 14:32:22 [pprocess_nuts0] [INFO ] Reprojected NUTS level 0 data from EPSG:4258 to EPSG:3035
+2017-06-23 14:32:22 [pprocess_nuts0] [DEBUG] ogr2ogr data/interim/reprojected/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp -t_srs "EPSG:3035" data/external/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp
+2017-06-23 14:32:24 [pprocess_nuts0] [DEBUG] Clipped NUTS data to analysis bounds: 2100000.0 1100000.0 6526000.0 5410000.0
+2017-06-23 14:32:24 [pprocess_nuts0] [DEBUG] Selected only a subset of eurostat countries:
+2017-06-23 14:32:24 [pprocess_nuts0] [DEBUG]  AT, BE, BG, CZ, DE, DK, ES, EL, EE, FR, FI, IT, HU, IE, NL, LU, LT, LV, PL, SE, RO, PT, SK, SI, UK
+2017-06-23 14:32:24 [pprocess_nuts0] [DEBUG] Resulting file: data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.shp

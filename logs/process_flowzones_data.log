@@ -1,252 +1,252 @@
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_1.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_10.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_11.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_12.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_13.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_15.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_16.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_17.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_2.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_22.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_24.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_26.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_27.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_28.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_29.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_3.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_30.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_31.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_33.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_34.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_35.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_5.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_7.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_8.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_9.tif.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:53:27 [process_flowzones] [DEBUG]  cookie_cut function took 61441.52903556824 ms
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_1.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_10.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_11.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_12.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_13.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_15.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_16.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_17.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_2.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_22.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_24.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_26.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_27.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_28.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_29.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_3.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_30.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_31.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_33.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_34.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_35.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_5.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_7.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_8.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_9.tif.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
-2017-06-21 17:54:23 [process_flowzones] [DEBUG]  cookie_cut function took 55803.348541259766 ms
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_1.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_10.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_11.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_12.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_13.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_15.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_16.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_17.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_2.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_22.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_24.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_26.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_27.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_28.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_29.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_3.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_30.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_31.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_33.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_34.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_35.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_5.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_7.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_8.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_agro//cultural_landscape_index_agro.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones/cultural_landscape_index_agro_9.tif.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:40:46 [process_flowzones] [DEBUG]  cookie_cut function took 48603.906869888306 ms
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_1.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_10.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_11.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_12.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_13.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_15.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_16.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_17.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_2.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_22.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_24.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_26.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_27.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_28.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_29.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_3.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_30.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_31.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_33.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_34.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_35.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_5.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_7.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_8.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Processing input file data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Using internal nodata values (e.g. -3.40282e+38) for image data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  Copying nodata values from source data/processed/features/provide/cultural_landscape_index_forest/cultural_landscape_index_forest.tif to destination data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones/cultural_landscape_index_forest_9.tif.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-23 14:41:34 [process_flowzones] [DEBUG]  cookie_cut function took 47235.72063446045 ms
