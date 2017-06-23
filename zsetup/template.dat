@@ -6,4 +6,4 @@ add edge points = 0
 initial removal percent = 0.0
 annotate name = 0
 mask missing areas = 1
-area mask file = ../../../data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0_data_mask.tif
+area mask file = ../../data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0_data_mask.tif
