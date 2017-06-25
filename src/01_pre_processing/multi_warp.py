@@ -42,6 +42,8 @@ def warp_raster(srcraster, outdir, verbose=False):
     warp_res = call(cmd_warp, shell=False)
     trsl_res = call(cmd_trsl, shell=False)
 
+    os.remove(dst_vrt_raster)
+
     return (warp_res, trsl_res)
 
 
