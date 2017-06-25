@@ -23,7 +23,7 @@ def timing(f):
     return wrap
 
 
-def warp_raster(srcraster, likeraster, outdir, verbose=False):
+def warp_raster(srcraster, outdir, verbose=False):
     """
     """
     logger = multiprocessing.get_logger()
@@ -46,7 +46,7 @@ def warp_raster(srcraster, likeraster, outdir, verbose=False):
 
 
 @timing
-def multi_warp(indir, likefile, outdir, cpus, logger=None, verbose=False):
+def multi_warp(indir, outdir, cpus, logger=None, verbose=False):
     """
     """
 
@@ -57,14 +57,12 @@ def multi_warp(indir, likefile, outdir, cpus, logger=None, verbose=False):
     src_rasters = glob.glob(indir + os.path.sep + "*.tif")
 
     logger.info('Warping {} rasters'.format(len(src_rasters)))
-    logger.debug('Using like raster: '.format(likefile))
 
     # Set up the worker pool
     pool = multiprocessing.Pool(processes=cpus)
     # Multitprocessing map only takes 1 argument, so we have to use
     # partials
-    pool.map(functools.partial(warp_raster, likeraster=likefile,
-                               outdir=outdir),
+    pool.map(functools.partial(warp_raster, outdir=outdir),
              src_rasters)
     return(True)
 
@@ -72,10 +70,9 @@ def multi_warp(indir, likefile, outdir, cpus, logger=None, verbose=False):
 @click.command()
 @click.option('-v', '--verbose', is_flag=True)
 @click.argument('indir', nargs=1, type=click.Path(exists=True))
-@click.argument('likefile', nargs=1, type=click.Path(exists=True))
 @click.argument('outdir', nargs=1)
 @click.option('-c', '--cpus', type=int, default=1)
-def cli(indir, likefile, outdir, cpus, verbose):
+def cli(indir, outdir, cpus, verbose):
     """ Command-line interface."""
 
     if verbose:
@@ -101,8 +98,8 @@ def cli(indir, likefile, outdir, cpus, verbose):
 
     assert cpus > 0, 'ERROR: number of jobs must be a positive integer'
 
-    success = multi_warp(indir=indir, likefile=likefile, outdir=outdir,
-                         cpus=cpus, logger=logger, verbose=verbose)
+    success = multi_warp(indir=indir, outdir=outdir,  cpus=cpus, logger=logger,
+                         verbose=verbose)
     if success:
         return(0)
     else:
