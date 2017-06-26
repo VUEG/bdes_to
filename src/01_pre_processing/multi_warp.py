@@ -35,7 +35,7 @@ def warp_raster(srcraster, outdir, verbose=False):
 
     cmd_warp = ["gdalwarp", "-of", "vrt", srcraster, dst_vrt_raster,
                 "-te", "2000000.0 ", "1000000.0", "6526000.0", "5410000.0",
-                "-multi"]
+                "-multi", "-dstnodata", "-3.40282e+38"]
     cmd_trsl = ["gdal_translate", "-co", "COMPRESS=DEFLATE",
                 dst_vrt_raster, dst_raster]
 
