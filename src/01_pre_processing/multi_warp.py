@@ -75,7 +75,6 @@ def warp_raster(srcraster, outdir, dtype, verbose=False):
         cmd_calc = ['rio', 'calc', '(where (== (take a 1) 0) -3.40282e+38 a)',
                     '--name', 'a={}'.format(trsl_raster),
                     '--co', 'compress=DEFLATE', dst_raster]
-        print(cmd_calc)
         calc_res = call(cmd_calc, shell=False)
         os.remove(trsl_raster)
 
