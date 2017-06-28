@@ -167,10 +167,11 @@ process_esf_sppdata <- function(spp_data, weights) {
     dplyr::mutate(weight = weight.y) %>% 
     dplyr::select(weight, dplyr::everything(), 
                   -weight.x, -weight.y, -sum, -id)
+  
   return(spp_data)
 }
 
-setup_groups <- function(variant, group) {
+setup_groups <- function(variant, group, multiplier=1) {
   
   groups_bd <- c(rep(1, NAMPHIBIANS), rep(2, NBIRDS),
                  rep(3, NMAMMALS), rep(4, NREPTILES))
@@ -218,6 +219,11 @@ setup_groups <- function(variant, group) {
   } else {
     stop("Unknown group: ", group)
   }
+  
+  if (!is.null(multiplier)) {
+    sppweights(variant) <- sppweights(variant) * multiplier 
+  }
+  
   # Set groups use and groups file
   variant <- set_dat_param(variant, "use groups", 1)
   # Note that groups file location is always relative to the bat file
@@ -327,10 +333,10 @@ variant4 <- setup_sppdata(variant4,
                                            "data/processed/features_flow_zones/provide/cultural_landscape_index_agro_flow_zones",
                                            "data/processed/features_flow_zones/provide/cultural_landscape_index_forest_flow_zones",
                                            "data/processed/features_flow_zones/provide/floodregulation_flow_zones",
-                                           "data/processed/features/provide/carbon_sequestration/",
+                                           "data/processed/features/provide/carbon_sequestration",
                                            "data/processed/features/provide/nature_tourism"),
                           recursive = TRUE, prefix = "../../")
-variant4 <- setup_groups(variant4, group = "esf")
+variant4 <- setup_groups(variant4, group = "esf", multiplier = 10000)
 variant4 <- set_dat_param(variant4, "removal rule", 2)
 variant4 <- setup_ppa(variant4)
 save_changes(variant4)
@@ -373,7 +379,7 @@ variant7 <- setup_sppdata(variant7, spp_file_dir = c("data/processed/features/ud
                                                      "data/processed/features/provide/carbon_sequestration/",
                                                      "data/processed/features/provide/nature_tourism"),
                           recursive = TRUE, prefix = "../../")
-variant7 <- setup_groups(variant7, group = "bio_esf")
+variant7 <- setup_groups(variant7, group = "bio_esf",  multiplier = 10000)
 variant7 <- setup_ppa(variant7)
 save_changes(variant7)
 
