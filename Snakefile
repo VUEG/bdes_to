@@ -330,8 +330,8 @@ rule create_clc_mask:
         clc_2012="data/external/eea/clc_2012/g250_clc12_V18_5.tif",
         nuts0=rules.rasterize_nuts_level0_data.output.data_mask
     output:
-        agg_clc="data/processed/features/eea/clc_2012/g1000_clc12_V18_5.tif",
-        clc_mask="data/processed/features/eea/clc_2012/clc_mask.tif"
+        agg_clc="data/processed/eea/clc_2012/g1000_clc12_V18_5.tif",
+        clc_mask="data/processed/eea/clc_2012/clc_mask.tif"
     log:
         "logs/create_clc_mask.log"
     message:
