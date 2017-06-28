@@ -1,0 +1,9 @@
+2017-06-28 13:17:23 [create_clc_mask] [INFO ]  [1/3] Aggregating CLC data
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  Copying color table from data/external/eea/clc_2012/g250_clc12_V18_5.tif to new file.
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  Creating output file that is 4526P x 4410L.
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  Processing input file data/external/eea/clc_2012/g250_clc12_V18_5.tif.
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  Using internal nodata values (e.g. 255) for image data/external/eea/clc_2012/g250_clc12_V18_5.tif.
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  Copying nodata values from source data/external/eea/clc_2012/g250_clc12_V18_5.tif to destination data/processed/features/eea/clc_2012/g1000_clc12_V18_5.tif.
+2017-06-28 13:17:28 [create_clc_mask] [DEBUG]  0...10...20...30...40...50...60...70...80...90...100 - done.
+2017-06-28 13:17:28 [create_clc_mask] [INFO ]  [2/3] Subsetting and binarizing CLC data
+2017-06-28 13:17:30 [create_clc_mask] [INFO ]  [3/3] Overlaying with NUTS0 mask
