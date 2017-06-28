@@ -27,7 +27,7 @@ PROJECT_EXTENT = {"bottom": 1000000.0, "left": 2000000.0, "right": 6526000.0,
 PROJECT_CRS = 3035
 
 # Project resolution in units of PROJECT_CRS
-PROJECT_RES = 100
+PROJECT_RES = 1000
 
 # Offset the bounds given in extent_yml. Values are in order
 # (left, bottom, right, top) and interpreted in the CRS units. values
@@ -324,6 +324,64 @@ rule clip_udr_data:
             cmd_str = 'gdalwarp -s_srs EPSG:3035 -t_srs EPSG:3035 -cutline {0} {1} {2} -co COMPRESS=DEFLATE'.format(input.clip_shp, s_raster, clipped_raster)
             for line in utils.process_stdout(shell(cmd_str, read=True), prefix=prefix):
                 llogger.debug(line)
+
+rule create_clc_mask:
+    input:
+        clc_2012="data/external/eea/clc_2012/g250_clc12_V18_5.tif",
+        nuts0=rules.rasterize_nuts_level0_data.output.data_mask
+    output:
+        agg_clc="data/processed/features/eea/clc_2012/g1000_clc12_V18_5.tif",
+        clc_mask="data/processed/features/eea/clc_2012/clc_mask.tif"
+    log:
+        "logs/create_clc_mask.log"
+    message:
+        "Creating CLC mask..."
+    run:
+        llogger = utils.get_local_logger("create_clc_mask", log[0])
+
+        minx = PROJECT_EXTENT["left"]
+        miny = PROJECT_EXTENT["bottom"]
+        maxx = PROJECT_EXTENT["right"]
+        maxy = PROJECT_EXTENT["top"]
+
+        # STEP 1: Aggregate CLC data
+        cmd_warp_str = "gdalwarp -te {} {} {} {} ".format(minx, miny, maxx, maxy) + \
+                       "-multi -tr {} {} -r mode ".format(PROJECT_RES, PROJECT_RES) + \
+                       "-s_srs 'EPSG:{}' -t_srs 'EPSG:{}' ".format(PROJECT_CRS, PROJECT_CRS) + \
+                       "{} {}".format(input.clc_2012, output.agg_clc)
+        llogger.info(" [1/3] Aggregating CLC data")
+        for line in utils.process_stdout(shell(cmd_warp_str, read=True)):
+            llogger.debug(line)
+
+        # STEP 2: Remove aquatic CLC classes:
+        # 39 Intertidal flats
+        # 40 Water courses
+        # 41 Water bodies
+        # 42 Coastal lagoons
+        # 43 Estuaries
+        # 44 Sea and ocean
+        #
+        # Also binarize the selection
+        clc_tmp_1 = os.path.basename(output.clc_mask).split(".")[0] + "_tmp1.tif"
+        clc_tmp_1 = os.path.join(os.path.dirname(output.agg_clc), clc_tmp_1)
+        cmd_calc_str = 'rio calc "(where (< (* (>= (read 1) 39) 255) 255) 1 0) " ' + \
+                       '{} {} --co "compress=DEFLATE"'.format(output.agg_clc, clc_tmp_1)
+        llogger.info(" [2/3] Subsetting and binarizing CLC data")
+        for line in utils.process_stdout(shell(cmd_calc_str, read=True)):
+            llogger.debug(line)
+
+        # STEP 3: Overlay with NUTS0 mask
+        cmd_ovr_str = 'rio calc "(where (== (+ (take a 1) (take b 1)) 2) 1 0) " ' + \
+                      '--name "a={}" --name "b={}" '.format(clc_tmp_1, input.nuts0) + \
+                      '{} --co "compress=DEFLATE"'.format(output.clc_mask)
+        logger.debug(cmd_ovr_str)
+        llogger.info(" [3/3] Overlaying with NUTS0 mask")
+        for line in utils.process_stdout(shell(cmd_ovr_str, read=True)):
+            llogger.debug(line)
+
+        # Remove temporary files
+        os.remove(clc_tmp_1)
+
 
 rule harmonize_data:
     input:
