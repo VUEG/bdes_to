@@ -87,6 +87,12 @@
             - README.md
           resources:
             - pop_density_v5.tif
+      - clc_2012:
+          category: auxiliary
+          metadata:
+            - README.md
+          resources:
+            - g250_clc12_V18_5.tif
   - provider: udr
     collections:
       - european_tetrapods:
