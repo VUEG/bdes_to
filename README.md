@@ -1,4 +1,4 @@
-[![Snakemake](https://img.shields.io/badge/snakemake-≥3.13.0-brightgreen.svg?style=flat-square)](http://snakemake.bitbucket.org)
+[![Snakemake](https://img.shields.io/badge/snakemake-≥3.13.3-brightgreen.svg?style=flat-square)](http://snakemake.bitbucket.org)
 
 ## Trade-offs between biodiversity and ecosystem services in Europe
 
