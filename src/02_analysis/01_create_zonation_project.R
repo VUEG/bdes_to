@@ -68,7 +68,7 @@ VARIANTS <- c("01_abf_bio",
 
 ZSETUP_ROOT <- "zsetup"
 
-PPA_RASTER_FILE <- "data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.tif"
+PPA_RASTER_FILE <- "../../data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.tif"
 PPA_CONFIG_FILE <- "ppa_config.txt"
 
 PROJECT_NAME <- "bdes_to"
