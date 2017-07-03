@@ -434,41 +434,41 @@ folder_prefix <- paste0(ZSETUP_ROOT, "/", PROJECT_NAME, "/")
 ## 08_prl_car_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant2@results@root),
-                              "02_abf_car.rank_expanded.compressed.tif")
+                              "02_abf_car.rank_matched.compressed.tif")
 create_load_variant(name = "08_prl_car_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 09_prl_esc_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant3@results@root),
-                              "03_abf_esc.rank_expanded.compressed.tif")
+                              "03_abf_esc.rank_matched.compressed.tif")
 create_load_variant(name = "09_prl_esc_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 10_prl_esf_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant4@results@root),
-                              "04_abf_esf.rank_expanded.compressed.tif")
+                              "04_abf_esf.rank_matched.compressed.tif")
 create_load_variant(name = "10_prl_esf_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 11_prl_biocar_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant5@results@root),
-                              "05_abf_bio_car.rank_expanded.compressed.tif")
+                              "05_abf_bio_car.rank_matched.compressed.tif")
 create_load_variant(name = "11_prl_biocar_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 12_prl_bioesc_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant6@results@root),
-                              "06_abf_bio_esc.rank_expanded.compressed.tif")
+                              "06_abf_bio_esc.rank_matched.compressed.tif")
 create_load_variant(name = "11_prl_bioesc_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 13_prl_bioesf_bio -----------------------------------------------------------
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant7@results@root),
-                              "07_abf_bio_esf.rank_expanded.compressed.tif")
+                              "07_abf_bio_esf.rank_matched.compressed.tif")
 create_load_variant(name = "13_prl_bioesf_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
