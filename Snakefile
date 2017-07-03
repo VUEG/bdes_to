@@ -523,9 +523,9 @@ rule match_coverages:
     log:
         "logs/match_coverages.log"
     message:
-        "Post-processing (matching) ZON results..."
+        "Matching variant 02-07 rank rasters to 01..."
     run:
-        llogger = utils.get_local_logger("match_coverages", log[1])
+        llogger = utils.get_local_logger("match_coverages", log[0])
 
         coverage.expand_value_coverage(input.car, input.expand_raster,
                                        output.car, logger=llogger)
