@@ -150,6 +150,49 @@ create_sh_file <- function(x) {
 }
 
 
+create_load_variant <- function(name, setup_variant, load_raster) {
+  from_name <- setup_variant@name
+  to_name <- name
+  # Copy and rename the setup variant
+  from_dir <- file.path(ZSETUP_ROOT, PROJECT_NAME, from_name)
+  to_dir <- file.path(ZSETUP_ROOT, PROJECT_NAME, to_name)
+  dir.create(to_dir)
+  from_files <- list.files(from_dir, full.names = TRUE,
+                           recursive = TRUE, include.dirs = TRUE)
+  invisible(file.copy(from_files, to_dir, recursive = TRUE))
+  # Rename subcomponents
+  to_files <- list.files(to_dir, full.names = TRUE,
+                         recursive = TRUE, include.dirs = TRUE)
+  for (from_item in to_files) {
+    to_item <- gsub(from_name, to_name, from_item)
+    file.rename(from_item, to_item)
+  }
+  # List renamed files
+  to_files <- list.files(to_dir, full.names = TRUE,
+                         recursive = TRUE, include.dirs = TRUE)
+  
+  # Rename the groups file definition in dat file
+  dat_file <- to_files[grepl("\\.dat$", to_files)]
+  dat_content <- readLines(dat_file, -1)
+  grp_file_def <- dat_content[grepl("^groups file", dat_content)]
+  dat_content[grepl("^groups file", dat_content)] <- gsub(from_name, to_name, grp_file_def)
+  writeLines(dat_content, dat_file)
+  
+  # Copy and modify the bat-file
+  from_bat_file <- setup_variant@bat.file
+  to_bat_file <- gsub(from_name, to_name, from_bat_file)
+  invisible(file.copy(from_bat_file, to_bat_file))
+  bat_content <- readLines(to_bat_file, -1)
+  bat_content <- gsub(from_name, to_name, bat_content)
+  # Replace new solution call with the loading command
+  bat_content <- gsub("-r", paste0("-l", load_raster), bat_content)
+  writeLines(bat_content, to_bat_file)
+  # Create a sh-file
+  create_sh_file(to_bat_file)
+  
+  return(invisible(TRUE))
+}
+
 process_esf_sppdata <- function(spp_data, weights) {
   spp_data <- dplyr::left_join(spp_data, weights, 
                                by = c("name" = "name"))
@@ -342,6 +385,7 @@ variant4 <- setup_ppa(variant4)
 save_changes(variant4)
 
 ## 05_abf_bio_car ------------------------------------------------------------
+
 variant5 <- get_variant(priocomp_zproject, 5)
 variant5 <- setup_sppdata(variant5, spp_file_dir = c("data/processed/features/udr/",
                                                      "data/processed/features/provide/carbon_sequestration/"), 
