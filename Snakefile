@@ -17,6 +17,7 @@ utils = SourceFileLoader("lib.utils", "src/00_lib/utils.py").load_module()
 spatutils = SourceFileLoader("lib.spatutils", "src/00_lib/spatutils.py").load_module()
 cutter = SourceFileLoader("lib.cutter", "src/01_pre_processing/cutter.py").load_module()
 similarity = SourceFileLoader("results.similarity", "src/03_post_processing/similarity.py").load_module()
+coverage = SourceFileLoader("results.coverage", "src/03_post_processing/data_coverage.py").load_module()
 
 ## GLOBALS --------------------------------------------------------------------
 
@@ -502,6 +503,42 @@ rule calculate_flowzone_weights:
         stats = zonal_stats(input.flow_zone_units, input.cli_agro,
                             stats=['sum'])
         print(stats)
+
+rule match_coverages:
+    input:
+        expand_raster="zsetup/bdes_to/01_abf_bio/01_abf_bio_out/01_abf_bio.rank.compressed.tif",
+        car="zsetup/bdes_to/02_abf_car/02_abf_car_out/02_abf_car.rank.compressed.tif",
+        esc="zsetup/bdes_to/03_abf_esc/03_abf_esc_out/03_abf_esc.rank.compressed.tif",
+        esf="zsetup/bdes_to/04_abf_esf/04_abf_esf_out/04_abf_esf.rank.compressed.tif",
+        bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank.compressed.tif",
+        bio_esc="zsetup/bdes_to/06_abf_bio_esc/06_abf_bio_esc_out/06_abf_bio_esc.rank.compressed.tif",
+        bio_esf="zsetup/bdes_to/07_abf_bio_esf/07_abf_bio_esf_out/07_abf_bio_esf.rank.compressed.tif"
+    output:
+        car="zsetup/bdes_to/02_abf_car/02_abf_car_out/02_abf_car.rank_matched.compressed.tif",
+        esc="zsetup/bdes_to/03_abf_esc/03_abf_esc_out/03_abf_esc.rank_matched.compressed.tif",
+        esf="zsetup/bdes_to/04_abf_esf/04_abf_esf_out/04_abf_esf.rank_matched.compressed.tif",
+        bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank_matched.compressed.tif",
+        bio_esc="zsetup/bdes_to/06_abf_bio_esc/06_abf_bio_esc_out/06_abf_bio_esc.rank_matched.compressed.tif",
+        bio_esf="zsetup/bdes_to/07_abf_bio_esf/07_abf_bio_esf_out/07_abf_bio_esf.rank_matched.compressed.tif"
+    log:
+        "logs/match_coverages.log"
+    message:
+        "Post-processing (matching) ZON results..."
+    run:
+        llogger = utils.get_local_logger("match_coverages", log[1])
+
+        coverage.expand_value_coverage(input.car, input.expand_raster,
+                                       output.car, logger=llogger)
+        coverage.expand_value_coverage(input.esc, input.expand_raster,
+                                       output.esc, logger=llogger)
+        coverage.expand_value_coverage(input.esf, input.expand_raster,
+                                       output.esf, logger=llogger)
+        coverage.expand_value_coverage(input.bio_car, input.expand_raster,
+                                       output.bio_car, logger=llogger)
+        coverage.expand_value_coverage(input.bio_esc, input.expand_raster,
+                                       output.bio_esc, logger=llogger)
+        coverage.expand_value_coverage(input.bio_esf, input.expand_raster,
+                                       output.bio_esf, logger=llogger)
 
 
 ## Set up, run and post-process analyses --------------------------------------
