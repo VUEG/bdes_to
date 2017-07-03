@@ -1,0 +1,139 @@
+---
+output: 
+  html_document: 
+    theme: flatly
+---
+
+```{r setup, echo=FALSE, message=FALSE}
+library(raster)
+library(tidyverse)
+library(tmap)
+library(zonator)
+
+data(Europe, land)
+```
+
+
+```{r helper-functions, echo=FALSE}
+get_map_params <- function(legend.reversed=FALSE) {
+  # Define a suitable bounding box
+  bbox <- matrix(c(2635899, 1386018, 6084606, 5307234),
+                         nrow = 2, ncol = 2, dimnames = list(c("x", "y"),
+                                                             c("min", "max")))
+
+  breaks <- c(0, 0.2, 0.5, 0.75, 0.9, 0.95, 0.98, 1)
+  colors <- rev(RColorBrewer::brewer.pal(length(breaks) - 1, "RdYlBu"))
+  labels <- (100 - breaks * 100)
+  labels <- cbind(labels[1:(length(labels) - 1)], labels[2:length(labels)])
+  labels[,2] <- paste(labels[,2], "%")
+  labels[7,2] <- ""
+  labels <- apply(labels, 1, paste, collapse = " - ")
+  labels[7] <- gsub(" - ", " %", labels[7])
+
+  params <- list()
+
+  params$bbox <- bbox
+
+  if (legend.reversed) {
+    params$breaks <- rev(breaks)
+    params$colors <- rev(colors)
+    params$labels <- rev(labels)
+  } else {
+    params$breaks <- breaks
+    params$colors <- colors
+    params$labels <- labels
+  }
+  return(params)
+}
+
+create_raster_levels <- function(raster) {
+
+  params <- get_map_params()
+
+  # Create a RasterLayer with a RAT
+  rat_raster <- raster::ratify(raster)
+  rat <- levels(rat_raster)[[1]]
+  rat$priorities_cat <- cut(rat$ID, breaks = params$breaks)
+  rat$priorities_cat <- factor(rat$priorities_cat,
+                               levels = rev(levels(rat$priorities_cat)))
+  levels(rat_raster) <- rat
+  return(rat_raster)
+}
+
+create_map <- function(raster, title) {
+
+  params <- get_map_params()
+
+  raster_map <- tm_shape(Europe, bbox = params$bbox, is.master = TRUE) +
+    tm_fill("lightgrey") +
+    tm_shape(raster) +
+    tm_raster(palette = params$colors, labels = params$labels,
+              breaks = params$breaks, auto.palette.mapping = FALSE,
+              legend.show = FALSE) +
+    tm_shape(Europe, bbox = params$bbox) +
+    tm_borders(col = "black", lwd = 0.3) +
+    tm_format_Europe(title = title, title.size = 4.0)
+  return(raster_map)
+}
+
+```
+
+
+```{r read-rank-rasters, echo=FALSE}
+get_rank_raster <- function(root, variant_name) {
+  rank_raster_file <- file.path(root, variant_name, 
+                                paste0(variant_name, "_out"), 
+                                paste0(variant_name, ".rank.compressed.tif"))
+  rank_raster <- raster::raster(rank_raster_file)
+}
+
+zproject_root <- "../../zsetup/bdes_to/"
+variants <- c("01_abf_bio", 
+              "02_abf_car", 
+              "03_abf_esc",
+              "04_abf_esf", 
+              "05_abf_bio_car", 
+              "06_abf_bio_esc",
+              "07_abf_bio_esf")
+
+```
+
+
+## 1. Biodiversity only (01_abf_bio) 
+
+```{r 01_abf_bio}
+create_map(get_rank_raster(zproject_root, variants[1]), "")
+```
+
+
+## 2. Carbon (02_abf_car)
+
+```{r 02_abf_car}
+create_map(get_rank_raster(zproject_root, variants[2]), "")
+```
+
+## 3. ESs capacity (03_abf_esc)
+
+```{r 03_abf_esc}
+create_map(get_rank_raster(zproject_root, variants[3]), "")
+```
+
+## 4. ESs flowzones (04_abf_esf)
+
+```{r 04_abf_esf}
+create_map(get_rank_raster(zproject_root, variants[4]), "")
+```
+
+## 5. Biodiversity and carbon (05_abf_bio_car)
+
+## 6. Biodiverstiy and ESs capacity (06_abf_bio_esc)
+
+```{r 06_abf_bio_esc}
+create_map(get_rank_raster(zproject_root, variants[6]), "")
+```
+
+## 7. Biodiverstiy adn ESs flowxzones (07_abf_bio_esf)
+
+```{r 07_abf_bio_esf}
+create_map(get_rank_raster(zproject_root, variants[7]), "")
+```
