@@ -1,1 +1,3 @@
-bdes_to/*/*_out
+bdes_to/*/*_out/*
+!bdes_to/*/*_out/*.png
+
