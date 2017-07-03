@@ -71,9 +71,9 @@ def expand_value_coverage(input_raster, expand_raster, output_raster,
                           logger=None):
     """ Expand a raster based on occurrence of informative cells in another.
 
-    Argument "intersect" can be used to define if only the mask of the
-    expand raster should be used, or an union between masks of input and
-    expand raster.
+    Argument "union" can be used to define if only the mask of the
+    expand raster should be used (False, default), or an union between masks of
+    input and expand raster (True).
 
     :param input_raster: String path to input raster.
     :param expand_raster: String path to mask raster.
@@ -127,7 +127,7 @@ def expand_value_coverage(input_raster, expand_raster, output_raster,
         # There might be some NoData values lurking around, replace them with
         # zero.
         src.data[src == input_nodata] = 0.0
-        
+
         profile = raster.profile
         profile.update(dtype=src_dtype, count=1, compress=compress,
                        nodata=input_nodata)
