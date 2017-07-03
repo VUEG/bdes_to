@@ -1,0 +1,12 @@
+[Settings]
+removal rule = 2
+warp factor = 1000
+edge removal = 0
+add edge points = 0
+initial removal percent = 0.0
+annotate name = 0
+mask missing areas = 1
+area mask file = ../../data/processed/eea/clc_2012/clc_mask.tif
+use groups = 1
+groups file = 09_prl_esc_bio/09_prl_esc_bio_groups.txt
+post-processing list file = ppa_config.txt
