@@ -8,5 +8,5 @@ annotate name = 0
 mask missing areas = 1
 area mask file = ../../data/processed/eea/clc_2012/clc_mask.tif
 use groups = 1
-groups file = 11_prl_bioesc_bio/11_prl_bioesc_bio_groups.txt
+groups file = 12_prl_bioesc_bio/12_prl_bioesc_bio_groups.txt
 post-processing list file = ppa_config.txt

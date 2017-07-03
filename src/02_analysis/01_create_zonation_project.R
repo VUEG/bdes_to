@@ -463,7 +463,7 @@ create_load_variant(name = "11_prl_biocar_bio", setup_variant = variant1,
 
 load_rank_raster <- file.path(gsub(folder_prefix,"", variant6@results@root),
                               "06_abf_bio_esc.rank_matched.compressed.tif")
-create_load_variant(name = "11_prl_bioesc_bio", setup_variant = variant1,
+create_load_variant(name = "12_prl_bioesc_bio", setup_variant = variant1,
                     load_raster = load_rank_raster)
 
 ## 13_prl_bioesf_bio -----------------------------------------------------------
