@@ -580,6 +580,8 @@ rule generate_range_data:
                                     "median_ol": [], "q75_ol": []})
 
         features = ES_DST_DATASETS + BD_DST_DATASETS
+        # Remove potential zip files
+        features = [feature for feature in features if not feature.endswith(".zip")]
         for i, feature in enumerate(features):
             prefix = utils.get_iteration_prefix(i+1, len(features))
 
