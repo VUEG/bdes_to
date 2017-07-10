@@ -510,14 +510,14 @@ rule match_coverages:
         car="zsetup/bdes_to/02_abf_car/02_abf_car_out/02_abf_car.rank.compressed.tif",
         esc="zsetup/bdes_to/03_abf_esc/03_abf_esc_out/03_abf_esc.rank.compressed.tif",
         esf="zsetup/bdes_to/04_abf_esf/04_abf_esf_out/04_abf_esf.rank.compressed.tif",
-        #bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank.compressed.tif",
+        bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank.compressed.tif",
         bio_esc="zsetup/bdes_to/06_abf_bio_esc/06_abf_bio_esc_out/06_abf_bio_esc.rank.compressed.tif",
         bio_esf="zsetup/bdes_to/07_abf_bio_esf/07_abf_bio_esf_out/07_abf_bio_esf.rank.compressed.tif"
     output:
         car="zsetup/bdes_to/02_abf_car/02_abf_car_out/02_abf_car.rank_matched.compressed.tif",
         esc="zsetup/bdes_to/03_abf_esc/03_abf_esc_out/03_abf_esc.rank_matched.compressed.tif",
         esf="zsetup/bdes_to/04_abf_esf/04_abf_esf_out/04_abf_esf.rank_matched.compressed.tif",
-        #bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank_matched.compressed.tif",
+        bio_car="zsetup/bdes_to/05_abf_bio_car/05_abf_bio_car_out/05_abf_bio_car.rank_matched.compressed.tif",
         bio_esc="zsetup/bdes_to/06_abf_bio_esc/06_abf_bio_esc_out/06_abf_bio_esc.rank_matched.compressed.tif",
         bio_esf="zsetup/bdes_to/07_abf_bio_esf/07_abf_bio_esf_out/07_abf_bio_esf.rank_matched.compressed.tif"
     log:
@@ -533,8 +533,8 @@ rule match_coverages:
                                        output.esc, logger=llogger)
         coverage.expand_value_coverage(input.esf, input.expand_raster,
                                        output.esf, logger=llogger)
-        #coverage.expand_value_coverage(input.bio_car, input.expand_raster,
-        #                               output.bio_car, logger=llogger)
+        coverage.expand_value_coverage(input.bio_car, input.expand_raster,
+                                       output.bio_car, logger=llogger)
         coverage.expand_value_coverage(input.bio_esc, input.expand_raster,
                                        output.bio_esc, logger=llogger)
         coverage.expand_value_coverage(input.bio_esf, input.expand_raster,
