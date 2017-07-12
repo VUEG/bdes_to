@@ -66,6 +66,15 @@ VARIANTS <- c("01_abf_bio",
               "06_abf_bio_esc",
               "07_abf_bio_esf")
 
+# In addition, the following pre-load variants are created later on
+#
+# 08_prl_car_bio
+# 09_prl_esc_bio
+# 10_prl_esf_bio
+# 11_prl_biocar_bio
+# 12_prl_bioesc_bio
+# 13_prl_bioesf_bio
+
 ZSETUP_ROOT <- "zsetup"
 
 PPA_RASTER_FILE <- "../../data/processed/eurostat/nuts_level0/NUTS_RG_01M_2013_level0.tif"
